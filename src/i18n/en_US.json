@@ -1,6 +1,6 @@
 {
-    "console_hint": "siyuan_rmv_btn: you never define which items to hide. 移除按钮插件：您没有指定要移除哪些按钮pls go to setting and define which to hide.请到插件设置页面指定if you didnt meant to fill all the boxes, fill _NONE_ into blank boxes. 如果您不是想移除所有三种元素，在空白的文本框里面填_NONE_",
-    "note_desc": "如果你试图隐藏的菜单项目与思源的商业部分有关，请考虑捐赠给@D和@V（而不是我），因为他们靠写开源代码生活。If items you are trying to hide is related to SiYuan's commercial part, please consider to donate to @D and @V (not me) because they lives by writing open-source codes.",
+    "console_hint": "siyuan_rmv_btn: you never define which items to hide. pls go to setting and define which to hide. if you didnt meant to fill all the boxes, fill _NONE_ into blank boxes. ",
+    "note_desc": "If items you are trying to hide is related to SiYuan's commercial part, please consider to donate to @D and @V (not me) because they lives by writing open-source codes.<br>v0.1.3",
     "note_title": "Notice",
     "rm_menu_title": "Items' labels you don't need",
     "rm_menu_desc": "seperate by english or chinese half-width comma AKA \",\" or \"，\"",
