@@ -10,7 +10,7 @@ It currently support 3 menus with id `commonMenu`, which are two icons on top ri
 # Links
 repo/Source Code：https://github.com/zxkmm/siyuan_rmv_btn  
 
-Download：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag/v0.0.3   
+Download：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag
 
 Reporting Bugs / Submitting Feqture request：https://github.com/zxkmm/siyuan_rmv_btn/issues   
 

@@ -6,7 +6,7 @@
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
 
-下载：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag/v0.0.3  
+下载：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag
 
 汇报 bug / 提交功能请求：https://github.com/zxkmm/siyuan_rmv_btn/issues  
 
