@@ -1,6 +1,6 @@
 {
   "name": "siyuan_rmv_btn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A plugin to remove menu items you don't really need.",
   "repository": "",

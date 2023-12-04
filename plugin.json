@@ -2,16 +2,21 @@
   "name": "siyuan_rmv_btn",
   "author": "zxkmm",
   "url": "https://github.com/zxkmm/siyuan_rmv_btn",
-  "version": "0.2.8",
+  "version": "0.0.01",
   "minAppVersion": "2.10.14",
   "backends": [
     "windows",
     "linux",
-    "darwin"
+    "darwin",
+    "ios",
+    "android"
   ],
   "frontends": [
     "desktop",
-    "desktop-window"
+    "desktop-window",
+    "mobile",
+    "browser-desktop",
+    "browser-mobile"
   ],
   "displayName": {
     "en_US": "SiYuan_remove_buttons",
