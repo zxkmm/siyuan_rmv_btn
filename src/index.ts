@@ -11,7 +11,7 @@ let unwantedLabels = [''];
 // console.log(unwantedLabels);//DBG
 let ForUnwantedTopBarIcons = [''];
 let ForUnwantedSideBarIcons = [''];
-const targetNode = document.getElementById('commonMenu');
+const targetNode = document.getElementById('commonMenu'); //it's the menu's id
 
 const unwantedItem = "unwantedItem";
 const unwantedTopBarIcon = "unwantedTopBarIcon";
@@ -31,9 +31,7 @@ export default class siyuan_rmv_btn extends Plugin {
             return [];
         } else {
             // 处理 undefined
-            console.log('siyuan_rmv_btn: you never define which items to hide. 移除按钮插件：您没有指定要移除哪些按钮');
-            console.log('pls go to setting and define which to hide. 请到插件设置页面指定');
-            console.log('if you didn\'t meant to fill all the boxes, fill _NONE_ into blank boxes. 如果您不是想移除所有三种元素，在空白的文本框里面填_NONE_')
+            console.log(this.i18n.console_hint);
             return [];
         }
     }
@@ -55,6 +53,19 @@ export default class siyuan_rmv_btn extends Plugin {
             document.head.appendChild(styleElement);
         });
 
+        //mobile
+        ForUnwantedTopBarIcons.forEach(elementType => {
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+            .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
+                display: none;
+              }
+            `;
+
+            document.head.appendChild(styleElement);
+        });
+
+
         //sidebars
 
         ForUnwantedSideBarIcons = this.convertStringToArray(this.data[unwantedSideBarIcon].unwantedSideBarIcons);
@@ -69,6 +80,19 @@ export default class siyuan_rmv_btn extends Plugin {
             document.head.appendChild(styleElement);
             //created by zxkmm at 2023.12.4 under MIT license
             //repo: https://github.com/zxkmm/siyuan_rmv_btn
+        });
+
+
+        //mobile
+        ForUnwantedSideBarIcons.forEach(elementType => {
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+                    .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
+                        display: none;
+                      }
+                    `;
+
+            document.head.appendChild(styleElement);
         });
 
     }
@@ -110,20 +134,16 @@ export default class siyuan_rmv_btn extends Plugin {
             }
         });
         this.setting.addItem({
-            title: "Note",
-            description: `
-            If items you are trying to hide is related to SiYuan's commercial part, please consider to donate to @D and @V (not me) because they lives by writing open-source codes.<br>
-            如果你试图隐藏的菜单项目与思源的商业部分有关，请考虑捐赠给@D和@V（而不是我），因为他们靠写开源代码生活。 <br>
-            v0.1.0
-            `,
+            title: this.i18n.note_title,
+            description: this.i18n.note_desc,
         });
 
 
 
 
         this.setting.addItem({
-            title: "Items' labels you don't need",
-            description: "seperate by english or chinese half-width comma AKA \",\" or \"，\"",
+            title: this.i18n.rm_menu_title,
+            description: this.i18n.rm_menu_desc,
             createActionElement: () => {
                 _unwantedItems_.className = "b3-text-field fn__block note";
                 _unwantedItems_.placeholder = "e.g. Copy, Paste";
@@ -133,18 +153,8 @@ export default class siyuan_rmv_btn extends Plugin {
         });
 
         this.setting.addItem({
-            title: "Top bar icons you don't need",
-            description: `❗EXPERIMENTAL❗<br>
-            seperate by english or chinese half-width comma AKA \",\" or \"，\"<br>
-            options:<br>
-            barSync: the sync button<br>
-            barBack: the back button<br>
-            barForward: the forward button<br>
-            barPlugins: the plugin button<br>
-            barSearch: search button<br>
-            barMode: daylight/night mode button<br>
-            barExit: exit button (only iPad)<br>
-            `,
+            title: this.i18n.rm_top_title,
+            description: this.i18n.rm_top_desc,
             createActionElement: () => {
                 _unwantedTopBarIcons_.className = "b3-text-field fn__block note";
                 _unwantedTopBarIcons_.placeholder = "e.g. barSync, barPlugins";
@@ -154,18 +164,8 @@ export default class siyuan_rmv_btn extends Plugin {
         });
 
         this.setting.addItem({
-            title: "Side bar icons you don't need",
-            description: `❗EXPERIMENTAL❗<br>
-            seperate by english or chinese half-width comma AKA \",\" or \"，\"<br>
-            options:<br>
-            outline: the outline icon<br>
-            inbox: the inbox icon<br>
-            bookmark: the bookmark icon<br>
-            tag: the tag icon<br>
-            backlink: the backlink icon<br>
-            globalGraph: the global graph icon<br>
-            graph: the single notebook graph icon<br>
-            `,
+            title: this.i18n.rm_side_title,
+            description: this.i18n.rm_side_desc,
             createActionElement: () => {
                 _unwantedSideBarIcons_.className = "b3-text-field fn__block note";
                 _unwantedSideBarIcons_.placeholder = "e.g. backlink, globalGraph";

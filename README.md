@@ -24,3 +24,5 @@ Forum / thread (Chinese)：https://ld246.com/article/1701669406727
  # Credits   
 https://github.com/siyuan-note/siyuan     
 https://github.com/muhanstudio  
+https://ld246.com/member/a2930610542  
+https://ld246.com/member/Wetoria  

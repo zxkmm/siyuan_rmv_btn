@@ -30,3 +30,5 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 # 鸣谢
 https://github.com/siyuan-note/siyuan   
 https://github.com/muhanstudio  
+https://ld246.com/member/a2930610542  
+https://ld246.com/member/Wetoria  
