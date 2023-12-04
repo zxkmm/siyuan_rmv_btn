@@ -19,3 +19,7 @@ Forum / thread (Chinese)：https://ld246.com/article/1701669406727
 # TODO    
  - i18n   
  - do more than `commonMenu` in the future   
+
+ # Credit  
+https://github.com/siyuan-note/siyuan     
+https://github.com/muhanstudio  

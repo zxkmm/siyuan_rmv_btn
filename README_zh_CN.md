@@ -24,3 +24,7 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 # TODO
  - i18n   
  - do more than `commonMenu` in the future   
+
+# 鸣谢
+https://github.com/siyuan-note/siyuan   
+https://github.com/muhanstudio  
