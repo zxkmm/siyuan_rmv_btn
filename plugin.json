@@ -1,0 +1,41 @@
+{
+  "name": "siyuan_rmv_btn",
+  "author": "zxkmm",
+  "url": "https://github.com/zxkmm/siyuan_rmv_btn",
+  "version": "0.2.8",
+  "minAppVersion": "2.10.14",
+  "backends": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "frontends": [
+    "desktop",
+    "desktop-window"
+  ],
+  "displayName": {
+    "en_US": "SiYuan_remove_buttons",
+    "zh_CN": "移除菜单项目"
+  },
+  "description": {
+    "en_US": "A plugin to remove menu items you don't really need.",
+    "zh_CN": "一个移除你不想要的菜单按钮的插件，覆盖电脑和手机"
+  },
+  "readme": {
+    "en_US": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "custom": [
+      "https://github.com/zxkmm/zxkmm"
+    ]
+  },
+  "keywords": [
+    "移除",
+    "隐藏",
+    "菜单",
+    "remove",
+    "hide",
+    "menu"
+  ]
+}
