@@ -1,11 +1,11 @@
 {
   "name": "siyuan_rmv_btn",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A plugin to remove menu items you don't really need.",
-  "repository": "",
-  "homepage": "",
-  "author": "",
+  "repository": "https://github.com/zxkmm/siyuan_rmv_btn",
+  "homepage": "https://github.com/zxkmm/siyuan_rmv_btn",
+  "author": "zxkmm",
   "license": "MIT",
   "scripts": {
     "make-link": "node  --no-warnings ./scripts/make_dev_link.js",
