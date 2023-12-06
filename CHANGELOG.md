@@ -12,3 +12,8 @@ now can remove almost all the buttons
 ## 0.1.3 2023.12.04
  - add chinese support   
  - fix for mobile doesn't work   
+
+ ## 0.1.4 2023.12.06
+  - support more buttons
+  - i18n fix
+  - clean up

@@ -36,6 +36,10 @@ export default class siyuan_rmv_btn extends Plugin {
         }
     }
 
+    //new
+    
+    //new
+
     async onLayoutReady() {
 
         //topbars
@@ -53,17 +57,6 @@ export default class siyuan_rmv_btn extends Plugin {
             document.head.appendChild(styleElement);
         });
 
-        //mobile
-        ForUnwantedTopBarIcons.forEach(elementType => {
-            const styleElement = document.createElement('style');
-            styleElement.textContent = `
-            .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
-                display: none;
-              }
-            `;
-
-            document.head.appendChild(styleElement);
-        });
 
 
         //sidebars
@@ -178,6 +171,9 @@ export default class siyuan_rmv_btn extends Plugin {
         unwantedLabels = this.convertStringToArray(this.data[unwantedItem].unwantedItems);
         // console.log("pla-ce1:");//DBG
         // console.log(unwantedLabels);//DBG
+
+
+        //TODO use MutationObserver instead of DOMNodeInserted
         targetNode.addEventListener('DOMNodeInserted', function (e) {
             const buttons = Array.from(targetNode.getElementsByTagName('button'));
 
@@ -194,6 +190,7 @@ export default class siyuan_rmv_btn extends Plugin {
             });
 
         }, false);
+
     }
 
 

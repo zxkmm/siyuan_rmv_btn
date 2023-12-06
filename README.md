@@ -20,6 +20,7 @@ Forum / thread (Chinese)：https://ld246.com/article/1701669406727
 # TODO
  - i18n    
  - friendly interface   
+ - use `MutationObserver` instead of `DOMNodeInserted`
 
  # Credits   
 https://github.com/siyuan-note/siyuan     

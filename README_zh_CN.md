@@ -26,6 +26,7 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 # TODO
  - i18n   
  - friendly interface
+ - use `MutationObserver` instead of `DOMNodeInserted`
 
 # 鸣谢
 https://github.com/siyuan-note/siyuan   
