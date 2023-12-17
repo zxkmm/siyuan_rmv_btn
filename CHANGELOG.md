@@ -17,3 +17,6 @@ now can remove almost all the buttons
   - support more buttons
   - i18n fix
   - clean up
+
+## 0.1.5 2023.12.17
+ - add more buttons

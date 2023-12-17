@@ -1,6 +1,6 @@
 # siyuan_rmv_btn
 A SiYuan Plugin that able to remove the buttons in menu that you don't really use.     
-It currently support removing top bar icons, side bar icons, and menus with id `commonMenu`, which are two icons on top right corner of each doc, and calling from the right side of each paragraph.   
+It currently support removing top bar icons, side bar icons, and menus with id `commonMenu`, which are two icons on top right corner of each doc, and calling from the right side of each paragraph.    
 # Warning
 - If you removed too much items and end up stopped working, please go to your workspace and delete the entire ``siyuan_rmv_btn`` folder.
 - The handler handle main interface of SiYuan as soon as DOM changes. In which case if you added too many items, the performance would be influenced.     
@@ -11,16 +11,15 @@ It currently support removing top bar icons, side bar icons, and menus with id `
 # Links
 repo/Source Code：https://github.com/zxkmm/siyuan_rmv_btn  
 
-Download：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag
+Download：https://github.com/zxkmm/siyuan_rmv_btn/releases
 
 Reporting Bugs / Submitting Feqture request：https://github.com/zxkmm/siyuan_rmv_btn/issues   
 
 Forum / thread (Chinese)：https://ld246.com/article/1701669406727   
 
 # TODO
- - i18n    
  - friendly interface   
- - use `MutationObserver` instead of `DOMNodeInserted`
+ - use `MutationObserver` instead of `DOMNodeInserted`  
 
  # Credits   
 https://github.com/siyuan-note/siyuan     

@@ -1,12 +1,13 @@
 # 思源隐藏菜单项
 
-一个SiYuan插件，可以删除菜单中你不使用的按钮。  
-现阶段支持移除顶栏按钮，侧栏按钮，还有commonMenu，即文档右上角的两个按钮，还有每个段落右侧的唤起图标。    
+一个SiYuan插件，可以删除菜单/底栏/顶栏中你不使用的按钮。  
+现阶段支持移除顶栏指定按钮，侧栏指定按钮，右键菜单项内容。     
+本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
 
-下载：https://github.com/zxkmm/siyuan_rmv_btn/releases/tag
+下载：集市搜索 “隐藏按钮” 或者 访问 https://github.com/zxkmm/siyuan_rmv_btn/releases
 
 汇报 bug / 提交功能请求：https://github.com/zxkmm/siyuan_rmv_btn/issues  
 
@@ -15,7 +16,7 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 
 - 如果你移除了太多东西导致无法正常操作，请到思源工作空间删除整个``siyuan_rmv_btn``文件夹。
 
-- handler 在 DOM 发生变化时会立即注入思源的主界面。在这种情况下，如果添加的项目过多，性能将受到影响。  
+- 插件在 DOM 发生变化时会立即注入思源的主界面。在这种情况下，如果添加的项目过多，性能将受到影响。  
 
 - 这个插件没有做额外的工作来防止JS注入，在这种情况下，当你在浏览器或公共网络中使用它时，你应该更加小心。  
 
@@ -24,8 +25,7 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 - 只保证默认的两个主题正常使用  
 
 # TODO
- - i18n   
- - friendly interface
+ - friendly interface  
  - use `MutationObserver` instead of `DOMNodeInserted`
 
 # 鸣谢

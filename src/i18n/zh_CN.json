@@ -4,8 +4,8 @@
     "note_title": "注意事项",
     "rm_menu_title": "要隐藏的菜单项",
     "rm_menu_desc": "填写界面语言的标签名（如“复制，移动”（不包括双引号）），若使用多语言，请同时填写所有语言的标签名（如“复制，Copy，移动，Move”（不包括双引号））。<br>用英文或中文半角逗号，即\",\"或\"，\"隔开。",
-    "rm_top_title": "要隐藏的顶栏按钮",
-    "rm_top_desc": "❗请勿隐藏功能性图标，如关闭按钮等，除非确实需要❗<br>填写提供的标签名字符串（如“barSync，barBack”（不包括双引号））<br>用英文或中文半角逗号，即\",\"或\"，\"隔开。<br>选项：<br>barSync 同步按钮<br>barBack 返回按钮<br>barForward 前进按钮<br>barPlugins 插件按钮<br>barSearch 搜索按钮<br>barMode 日间 夜间模式按钮<br>barExit 退出按钮（仅限iPad）<br>windowControls 窗口控制按钮<br>toolbarVIP 皇冠图标<br>closeWindow 关闭窗口（PC）<br>minWindow 最小化窗口<br>restoreWindow 还原窗口<br>maxWindow 最大化窗口",
+    "rm_top_title": "要隐藏的顶栏按钮和底栏按钮",
+    "rm_top_desc": "❗请勿隐藏功能性图标，如关闭按钮等，除非确实需要❗<br>填写提供的标签名字符串（如“barSync，barBack”（不包括双引号））<br>用英文或中文半角逗号，即\",\"或\"，\"隔开。<br>选项：<br>barSync 同步按钮<br>barBack 返回按钮<br>barForward 前进按钮<br>barPlugins 插件按钮<br>barSearch 搜索按钮<br>barMode 日间 夜间模式按钮<br>barExit 退出按钮（仅限iPad）<br>windowControls 窗口控制按钮<br>toolbarVIP 皇冠图标<br>statusHelp 底栏帮助按钮 <br>barDock 底栏中的隐藏侧栏按钮<br>",
     "rm_side_title": "要隐藏的侧栏按钮",
     "rm_side_desc": "填写提供的标签名字符串（如“outline，tag”（不包括双引号））<br>用英文或中文半角逗号，即\",\"或\"，\"隔开。<br>选项：<br>outline 大纲图标<br>inbox 收件箱图标<br>bookmark 书签图标<br>tag 标签图标<br>backlink 反链图标<br>globalGraph 全局图谱图标<br>graph 单个笔记本图谱图标<br>"
 }
