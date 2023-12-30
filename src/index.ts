@@ -110,6 +110,7 @@ export default class siyuan_rmv_btn extends Plugin {
     }
 
     rmvSideBarIcons(_toRemoveListArray_){
+        //pc view
         _toRemoveListArray_.forEach(elementType => {
             const styleElement = document.createElement('style');
             styleElement.textContent = `
@@ -117,6 +118,20 @@ export default class siyuan_rmv_btn extends Plugin {
                 display: none;
             }
             `;
+            document.head.appendChild(styleElement);
+        });
+        //mobile view
+
+
+        //mobile
+        _toRemoveListArray_.forEach(elementType => {
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+            .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
+                display: none;
+              }
+            `;
+
             document.head.appendChild(styleElement);
         });
     }
