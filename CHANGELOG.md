@@ -20,3 +20,6 @@ now can remove almost all the buttons
 
 ## 0.1.5 2023.12.17
  - add more buttons
+
+ ## 1.0.0 2023.12.23
+ - refactor entire plugin, support more listening implementation

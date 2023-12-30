@@ -2,7 +2,7 @@
   "name": "siyuan_rmv_btn",
   "author": "zxkmm",
   "url": "https://github.com/zxkmm/siyuan_rmv_btn",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "minAppVersion": "2.10.14",
   "backends": [
     "windows",

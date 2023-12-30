@@ -1,11 +1,16 @@
 {
-    "console_hint": "siyuan_rmv_btn: you never define which items to hide. pls go to setting and define which to hide. if you didnt meant to fill all the boxes, fill _NONE_ into blank boxes. ",
-    "note_desc": "If items you are trying to hide is related to SiYuan's commercial part, please consider to donate to @D and @V (not me) because they lives by writing open-source codes.<br>v0.1.3",
-    "note_title": "Notice",
-    "rm_menu_title": "Items' labels you don't need",
-    "rm_menu_desc": "seperate by english or chinese half-width comma AKA \",\" or \"，\"",
-    "rm_top_title": "Top bar icons you don't need",
-    "rm_top_desc": "❗EXPERIMENTAL❗<br>seperate by english or chinese half-width comma AKA \",\" or \"，\"<br>options:<br>barSync: the sync button<br>barBack: the back button<br>barForward: the forward button<br>barPlugins: the plugin button<br>barSearch: search button<br>barMode: daylight/night mode button<br>barExit: exit button (only iPad)<br>",
-    "rm_side_title": "Side bar icons you don't need",
-    "rm_side_desc": "❗EXPERIMENTAL❗<br>seperate by english or chinese half-width comma AKA \",\" or \"，\"<br>options:<br>outline: the outline icon<br>inbox: the inbox icon<br>bookmark: the bookmark icon<br>tag: the tag icon<br>backlink: the backlink icon<br>globalGraph: the global graph icon<br>graph: the single notebook graph icon<br>"
+    "totalSwitch": "Total Switch",
+    "totalSwitchdesc": "If the items you want to hide are related to the commercial part of Source, please consider donating to @D and @V (not me) as they live by writing open-source code.<br> v1.0.0",
+    "listenImplementation": "Listen Implementation",
+    "listenImplementationdesc": "It is recommended to choose the DOMNodeInserted option for the best overall performance, but this option will output a warning in the terminal. If you cannot accept this, please choose one of the other two implementations.",
+    "reload_hint": "Reload the interface to apply the latest changes.",
+    "old_config_exist": "Remove Button Plugin:<br> Due to a <b><u>performance improvement</u></b> refactoring of the configuration storage system in the latest version, please <b><u>uninstall and reinstall</u></b> the Remove Button Plugin after seeing this prompt. Enter the configuration in the settings interface again to ensure performance and stability. Thank you for your understanding. <br> This prompt will appear <b><u>only once per device</u></b> after <b><u>correct reinstallation</u></b>. If you still see this prompt after reinstalling, please uninstall the Remove Button Plugin first and report the bug to the developer.",
+    "rm_menu_title": "Menu Items to Hide",
+    "rm_menu_desc": "Enter the label names of the interface language (e.g., \"Copy, Move\" without quotes). If using multiple languages, please enter the label names for all languages (e.g., \"Copy, Copy, Move, Move\" without quotes).<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".",
+    "rm_top_title": "Top and Bottom Bar Buttons to Hide",
+    "rm_top_desc": "❗ Do not hide functional icons such as the close button unless absolutely necessary ❗<br>Enter the provided label name strings (e.g., \"barSync, barBack\" without quotes)<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".<br>Options:<br>barSync: Sync button<br>barBack: Back button<br>barForward: Forward button<br>barPlugins: Plugins button<br>barSearch: Search button<br>barMode: Day/Night mode button<br>barExit: Exit button (iPad only)<br>windowControls: Window control button<br>toolbarVIP: Crown icon<br>statusHelp: Bottom bar help button<br>barDock: Hide sidebar button in the bottom bar<br>",
+    "rm_side_title": "Sidebar Buttons to Hide",
+    "rm_side_desc": "Enter the provided label name strings (e.g., \"outline, tag\" without quotes)<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".<br>Options:<br>outline: Outline icon<br>inbox: Inbox icon<br>bookmark: Bookmark icon<br>tag: Tag icon<br>backlink: Backlink icon<br>globalGraph: Global graph icon<br>graph: Individual notebook graph icon<br>",
+    "ignore_warning": "remove button plugin: the warning above is just because you choosed a high performance observing implementation, if you don't like it, you may choose the other two selections in the setting panel. thank you"
+
 }
