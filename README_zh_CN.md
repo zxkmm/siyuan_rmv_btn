@@ -27,7 +27,10 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 # TODO
  - friendly interface  
 # 鸣谢
-https://github.com/siyuan-note/siyuan   
-https://github.com/muhanstudio  
-https://ld246.com/member/a2930610542  
-https://ld246.com/member/Wetoria  
+[SiYuan](https://github.com/siyuan-note/siyuan)   ( [in b3log](https://b3log.org/siyuan/) )
+
+[@muhanstudio](https://github.com/muhanstudio)   ( [in b3log](https://ld246.com/member/muhanstudio) )
+
+[@TCOTC](https://github.com/TCOTC)   ( [in b3log](https://ld246.com/member/a2930610542) )
+
+[@Wetoria](https://github.com/Wetoria)   ( [in b3log](https://ld246.com/member/Wetoria) )
