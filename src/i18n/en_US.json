@@ -1,6 +1,6 @@
 {
     "totalSwitch": "Total Switch",
-    "totalSwitchdesc": "If the items you want to hide are related to the commercial part of Source, please consider donating to @D and @V (not me) as they live by writing open-source code.<br> v1.0.1",
+    "totalSwitchdesc": "If the items you want to hide are related to the commercial part of Source, please consider donating to @D and @V (not me) as they live by writing open-source code.<br> v1.0.2",
     "listenImplementation": "Listen Implementation",
     "listenImplementationdesc": "It is recommended to choose the DOMNodeInserted option for the best overall performance, but this option will output a warning in the terminal. If you cannot accept this, please choose one of the other two implementations.",
     "reload_hint": "Reload the interface to apply the latest changes.",

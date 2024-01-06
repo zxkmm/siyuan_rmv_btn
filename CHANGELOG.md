@@ -26,3 +26,6 @@ now can remove almost all the buttons
 
 ## 1.0.1 2023.12.23
  - fix mobile side bar doesn't hide correctly
+
+## 1.0.2 2024.01.06
+- fix tag in editor disappeared

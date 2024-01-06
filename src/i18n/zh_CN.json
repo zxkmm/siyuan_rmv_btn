@@ -1,6 +1,6 @@
 {
     "totalSwitch":"总开关",
-    "totalSwitchdesc":"如果您要隐藏的项目与思源的商业部分有关，请考虑向@D和@V捐赠（不是我），因为他们以编写开源代码生活。<br> v1.0.1",
+    "totalSwitchdesc":"如果您要隐藏的项目与思源的商业部分有关，请考虑向@D和@V捐赠（不是我），因为他们以编写开源代码生活。<br> v1.0.2",
     "listenImplementation": "监听实现",
     "listenImplementationdesc":"建议首选综合性能最佳的DOMNodeInserted, 但是这个选项会在终端输出一个warning,如果您无法接受,请选择另外两个实现",
     "reload_hint":"重载界面以应用最新更改",
