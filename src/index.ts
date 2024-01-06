@@ -1,12 +1,15 @@
 import {
     Plugin,
     showMessage,
+    getFrontend,
 } from "siyuan";
 import "@/index.scss";
 
 import { SettingUtils } from "./libs/setting-utils";
 
 const STORAGE_NAME = "menu-config";
+
+const frontEnd = getFrontend();
 
 //old trash
 const unwantedItem = "unwantedItem";
@@ -109,31 +112,34 @@ export default class siyuan_rmv_btn extends Plugin {
         });
     }
 
-    rmvSideBarIcons(_toRemoveListArray_){
-        //pc view
-        _toRemoveListArray_.forEach(elementType => {
-            const styleElement = document.createElement('style');
-            styleElement.textContent = `
-            span[data-type="${elementType}"] {
+    rmvSideBarIcons(_toRemoveListArray_) {
+
+        if (frontEnd == "desktop" || frontEnd =="browser-desktop") {
+            //pc view
+            _toRemoveListArray_.forEach(elementType => {
+                const styleElement = document.createElement('style');
+                styleElement.textContent = `
+            .dock__item[data-type="${elementType}"] {
                 display: none;
             }
             `;
-            document.head.appendChild(styleElement);
-        });
-        //mobile view
-
-
-        //mobile
-        _toRemoveListArray_.forEach(elementType => {
-            const styleElement = document.createElement('style');
-            styleElement.textContent = `
+                document.head.appendChild(styleElement);
+            });
+            //mobile view
+        }
+        if (frontEnd == "mobile" || frontEnd =="browser-mobile") {
+            //mobile
+            _toRemoveListArray_.forEach(elementType => {
+                const styleElement = document.createElement('style');
+                styleElement.textContent = `
             .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
                 display: none;
               }
             `;
 
-            document.head.appendChild(styleElement);
-        });
+                document.head.appendChild(styleElement);
+            });
+        }
     }
 
     checkOldComfigExist(){ //old trash detect
@@ -229,6 +235,8 @@ export default class siyuan_rmv_btn extends Plugin {
         this.checkOldComfigExist();
         this.loadData(STORAGE_NAME);
         this.settingUtils.load();
+
+        console.log(frontEnd);
 
         // //dbg
         // console.log("menuItems2Rmv" + this.settingUtils.get("unwantedMenuItem"));
