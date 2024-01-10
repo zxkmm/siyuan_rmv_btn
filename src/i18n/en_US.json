@@ -11,6 +11,7 @@
     "rm_top_desc": "❗ Do not hide functional icons such as the close button unless absolutely necessary ❗<br>Enter the provided label name strings (e.g., \"barSync, barBack\" without quotes)<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".<br>Options:<br>barSync: Sync button<br>barBack: Back button<br>barForward: Forward button<br>barPlugins: Plugins button<br>barSearch: Search button<br>barMode: Day/Night mode button<br>barExit: Exit button (iPad only)<br>windowControls: Window control button<br>toolbarVIP: Crown icon<br>statusHelp: Bottom bar help button<br>barDock: Hide sidebar button in the bottom bar<br>",
     "rm_side_title": "Sidebar Buttons to Hide",
     "rm_side_desc": "Enter the provided label name strings (e.g., \"outline, tag\" without quotes)<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".<br>Options:<br>outline: Outline icon<br>inbox: Inbox icon<br>bookmark: Bookmark icon<br>tag: Tag icon<br>backlink: Backlink icon<br>globalGraph: Global graph icon<br>graph: Individual notebook graph icon<br>",
-    "ignore_warning": "remove button plugin: the warning above is just because you choosed a high performance observing implementation, if you don't like it, you may choose the other two selections in the setting panel. thank you"
+    "ignore_warning": "remove button plugin: the warning above is just because you choosed a high performance observing implementation, if you don't like it, you may choose the other two selections in the setting panel. thank you",
+    "uninstall_hint":"Succesfully uninstalled Remove Button Plugin."
 
 }

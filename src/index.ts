@@ -269,14 +269,17 @@ export default class siyuan_rmv_btn extends Plugin {
     }
 
     async onunload() {
+        await this.settingUtils.save();
+        this.reloadInterface();
+    }
+
+    uninstall(){
         //remove old trash
         this.removeData(unwantedTopBarIcon);
         this.removeData(unwantedSideBarIcon);
         this.removeData(unwantedItem);
         //remove old trash end
-
-        await this.settingUtils.save();
-        this.reloadInterface();
+        showMessage(this.i18n.uninstall_hint);
     }
 
 }
