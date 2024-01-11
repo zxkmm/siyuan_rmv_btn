@@ -244,7 +244,7 @@ export default class siyuan_rmv_btn extends Plugin {
         this.loadData(STORAGE_NAME);
         this.settingUtils.load();
 
-        console.log(frontEnd);
+        // console.log(frontEnd); //DBG
 
         // //dbg
         // console.log("menuItems2Rmv" + this.settingUtils.get("unwantedMenuItem"));
