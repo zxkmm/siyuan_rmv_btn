@@ -17,6 +17,9 @@ Reporting Bugs / Submitting Feqture request：https://github.com/zxkmm/siyuan_rm
 
 Forum / thread (Chinese)：https://ld246.com/article/1701669406727   
 
+# Note
+Please star⭐ my GitHub repository if you like this plugin. [https://github.com/zxkmm/siyuan_rmv_btn](https://github.com/zxkmm/siyuan_rmv_btn)
+
 # TODO
  - friendly interface   
 

@@ -24,6 +24,10 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 
 - 只保证默认的两个主题正常使用  
 
+# 备注
+如果您喜欢这个插件，请给我的 GitHub 仓库点亮免费的星星⭐（Star）。  
+链接：[https://github.com/zxkmm/siyuan_rmv_btn](https://github.com/zxkmm/siyuan_rmv_btn)    
+
 # TODO
  - friendly interface  
 # 鸣谢
