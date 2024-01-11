@@ -12,6 +12,8 @@
     "rm_side_title": "Sidebar Buttons to Hide",
     "rm_side_desc": "Enter the provided label name strings (e.g., \"outline, tag\" without quotes)<br>Separate with English or Chinese half-width commas, i.e., \",\" or \"，\".<br>Options:<br>outline: Outline icon<br>inbox: Inbox icon<br>bookmark: Bookmark icon<br>tag: Tag icon<br>backlink: Backlink icon<br>globalGraph: Global graph icon<br>graph: Individual notebook graph icon<br>",
     "ignore_warning": "remove button plugin: the warning above is just because you choosed a high performance observing implementation, if you don't like it, you may choose the other two selections in the setting panel. thank you",
-    "uninstall_hint":"Succesfully uninstalled Remove Button Plugin."
+    "uninstall_hint":"Succesfully uninstalled Remove Button Plugin.",
+    "hintTitle":"About",
+    "hintDesc":"<ul><li>● By <a href='https://github.com/zxkmm'>zxkmm</a> and open source under the MIT license.</li><li>● Please star my GitHub repository if you like this plugin.</li><li>● Link: <a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● If you want to hide elements related to SiYuan's commercial part, please consider donating to the makers of SiYuan (AKA @D and @V) （not me） before using.</li></ul>"
 
 }

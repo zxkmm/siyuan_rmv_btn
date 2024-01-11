@@ -12,5 +12,8 @@
     "rm_side_title": "要隐藏的侧栏按钮",
     "rm_side_desc": "填写提供的标签名字符串（如“outline，tag”（不包括双引号））<br>用英文或中文半角逗号，即\",\"或\"，\"隔开。<br>选项：<br>outline 大纲图标<br>inbox 收件箱图标<br>bookmark 书签图标<br>tag 标签图标<br>backlink 反链图标<br>globalGraph 全局图谱图标<br>graph 单个笔记本图谱图标<br>",
     "ignore_warning": "移除按钮插件: 上方的warning是因为您选择了高性能的监听方式,若不喜欢,请在设置页面选择另外两种方式,谢谢",
-    "uninstall_hint": "移除按钮插件: 成功卸载"
+    "uninstall_hint": "移除按钮插件: 成功卸载",
+    "hintTitle":"关于",
+    "hintDesc":"<ul><li>● 由<a href='https://github.com/zxkmm'>zxkmm</a>制作， MIT 协议开源。</li><li>● 如果您喜欢这个插件，请给我的GitHub仓库点免费的星星（Star）。</li><li>● 链接：<a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● 如果您想隐藏与思源商业部分相关的元素，请在使用前考虑向思源的制作者（即@D和@V）捐赠（不是捐给我）。</li></ul>"
+
 }

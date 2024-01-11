@@ -227,6 +227,14 @@ export default class siyuan_rmv_btn extends Plugin {
             title: this.i18n.rm_side_title,
             description: this.i18n.rm_side_desc,
         });
+        this.settingUtils.addItem({
+            key: "hint",
+            value: "",
+            type: "hint",
+            title: this.i18n.hintTitle,
+            description: this.i18n.hintDesc,
+        });
+
 
     }
 
