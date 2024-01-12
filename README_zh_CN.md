@@ -1,17 +1,23 @@
-# 思源隐藏菜单项
+# 思源移除按钮
 
 一个SiYuan插件，可以删除菜单/底栏/顶栏中你不使用的按钮。  
 现阶段支持移除顶栏指定按钮，侧栏指定按钮，右键菜单项内容。     
 本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
 
+## changelog 1.1.0 2024.01.12
+ - Add icons for reference in setting panel.
+ - Not anymore detect or read old config.
+ - Delete config data after uninstall, but not when turn off plugin. 
+
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
 
-下载：集市搜索 “隐藏按钮” 或者 访问 https://github.com/zxkmm/siyuan_rmv_btn/releases
+下载：集市搜索 “移除按钮” 或者 访问 https://github.com/zxkmm/siyuan_rmv_btn/releases
 
 汇报 bug / 提交功能请求：https://github.com/zxkmm/siyuan_rmv_btn/issues  
 
 论坛thread：https://ld246.com/article/1701669406727  
+
 # 警告
 
 - 如果你移除了太多东西导致无法正常操作，请到思源工作空间删除整个``siyuan_rmv_btn``文件夹。

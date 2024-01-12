@@ -11,6 +11,12 @@ const STORAGE_NAME = "menu-config";
 
 const frontEnd = getFrontend();
 
+// //old trash
+// const unwantedItem = "unwantedItem";
+// const unwantedTopBarIcon = "unwantedTopBarIcon";
+// const unwantedSideBarIcon = "unwatedSideBarIcon";
+// //old trash end
+
 const targetNode = document.getElementById('commonMenu'); //it's the menu's id
 
 export default class siyuan_rmv_btn extends Plugin {
@@ -30,11 +36,11 @@ export default class siyuan_rmv_btn extends Plugin {
         }
     }
 
-    rmvMenuItems(_toRemoveListArray_, _monitorImplementation_) {
-        if (_monitorImplementation_ == 1) { //DOMNodeInserted
+    rmvMenuItems(_toRemoveListArray_,_monitorImplementation_){
+        if(_monitorImplementation_ == 1){ //DOMNodeInserted
             targetNode.addEventListener('DOMNodeInserted', function (e) {
                 const buttons = Array.from(targetNode.getElementsByTagName('button'));
-
+    
                 buttons.forEach((button) => {
                     let labelElement = button.getElementsByClassName('b3-menu__label')[0];
                     if (labelElement) {
@@ -44,17 +50,17 @@ export default class siyuan_rmv_btn extends Plugin {
                         }
                     }
                 });
-
+    
             }, false);
             console.log(this.i18n.ignore_warning);
-
-        } else if (_monitorImplementation_ == 2) { //MutationObserver
-            var observer = new MutationObserver(function (mutationsList, observer) {
-                for (let mutation of mutationsList) {
+    
+        }else if(_monitorImplementation_ == 2){ //MutationObserver
+            var observer = new MutationObserver(function(mutationsList, observer) {
+                for(let mutation of mutationsList) {
                     // if((mutation.type === 'childList') || (mutation.type === 'subtree')) {
-                    if (mutation.type) {
+                        if(mutation.type) {
                         const buttons = Array.from(document.getElementById('commonMenu').getElementsByTagName('button'));
-
+                        
                         buttons.forEach((button) => {
                             let labelElement = button.getElementsByClassName('b3-menu__label')[0];
                             if (labelElement) {
@@ -67,14 +73,14 @@ export default class siyuan_rmv_btn extends Plugin {
                     }
                 }
             });
-
+            
             observer.observe(targetNode, { childList: true, subtree: true });
-        } else {
-            var observer = new MutationObserver(function (mutationsList, observer) {
-                for (let mutation of mutationsList) {
-                    if ((mutation.type === 'childList') || (mutation.type === 'subtree')) {
+        }else {
+            var observer = new MutationObserver(function(mutationsList, observer) {
+                for(let mutation of mutationsList) {
+                    if((mutation.type === 'childList') || (mutation.type === 'subtree')) {
                         const buttons = Array.from(document.getElementById('commonMenu').getElementsByTagName('button'));
-
+                        
                         buttons.forEach((button) => {
                             let labelElement = button.getElementsByClassName('b3-menu__label')[0];
                             if (labelElement) {
@@ -87,12 +93,13 @@ export default class siyuan_rmv_btn extends Plugin {
                     }
                 }
             });
-
+            
             observer.observe(targetNode, { childList: true, subtree: true });
         }
     }
 
-    rmvTopButtonBarIcons(_toRemoveListArray_) {
+
+    rmvTopButtonBarIcons(_toRemoveListArray_){
         _toRemoveListArray_.forEach(elementType => {
             const styleElement = document.createElement('style');
             styleElement.textContent = `
@@ -107,7 +114,7 @@ export default class siyuan_rmv_btn extends Plugin {
 
     rmvSideBarIcons(_toRemoveListArray_) {
 
-        if (frontEnd == "desktop" || frontEnd == "browser-desktop") {
+        if (frontEnd == "desktop" || frontEnd =="browser-desktop") {
             //pc view
             _toRemoveListArray_.forEach(elementType => {
                 const styleElement = document.createElement('style');
@@ -120,7 +127,7 @@ export default class siyuan_rmv_btn extends Plugin {
             });
             //mobile view
         }
-        if (frontEnd == "mobile" || frontEnd == "browser-mobile") {
+        if (frontEnd == "mobile" || frontEnd =="browser-mobile") {
             //mobile
             _toRemoveListArray_.forEach(elementType => {
                 const styleElement = document.createElement('style');
@@ -135,12 +142,48 @@ export default class siyuan_rmv_btn extends Plugin {
         }
     }
 
-    reloadInterface() {
+    // checkOldComfigExist(){ //old trash detect
+    //     if (
+    //         this.data[unwantedTopBarIcon].unwantedTopBarIcons ||
+    //         this.data[unwantedSideBarIcon].unwantedTopBarIcons ||
+    //         this.data[unwantedSideBarIcon].unwantedTopBarIcons
+    //         ){
+    //         console.log(this.i18n.old_config_exist);
+    //         showMessage(this.i18n.old_config_exist);
+    //     }
+        
+    // }
+
+    reloadInterface(){
         window.location.reload();
         showMessage(this.i18n.reload_hint);
     }
 
     async onload() {
+
+
+        // //old trash
+        // try {
+        //     const _item_ = await this.loadData(unwantedItem);
+        //     this.data[unwantedItem].unwantedItems = _item_.unwantedItems;
+        // } catch (error) {
+        //     this.data[unwantedItem] = { unwantedItems: "" };
+        // }
+
+        // try {
+        //     const _item_ = await this.loadData(unwantedTopBarIcon);
+        //     this.data[unwantedTopBarIcon].unwantedTopBarIcons = _item_.unwantedTopBarIcons;
+        // } catch (error) {
+        //     this.data[unwantedTopBarIcon] = { unwantedTopBarIcons: "" }
+        // }
+
+        // try {
+        //     const _item_ = await this.loadData(unwantedSideBarIcon);
+        //     this.data[unwantedSideBarIcon].unwantedSideBarIcons = _item_.unwantedSideBarIcons;
+        // } catch (error) {
+        //     this.data[unwantedSideBarIcon] = { unwantedSideBarIcons: "" }
+        // }
+        // //old trash end
 
         this.settingUtils = new SettingUtils(this, STORAGE_NAME);
         this.settingUtils.load();
@@ -195,8 +238,19 @@ export default class siyuan_rmv_btn extends Plugin {
 
     onLayoutReady() {
 
+        // this.checkOldComfigExist(); //old trash
         this.loadData(STORAGE_NAME);
         this.settingUtils.load();
+
+        // console.log(frontEnd); //DBG
+
+        // //dbg
+        // console.log("menuItems2Rmv" + this.settingUtils.get("unwantedMenuItem"));
+        // console.log("topbtn2rmv" + this.settingUtils.get("unwantedTopButtonBarIcon"));
+        // console.log("sideBtn2mv" + this.settingUtils.get("unwantedSideBarIcon"));
+        // console.log("obsImp"+ this.settingUtils.get("listenImplementation"));
+        // //dbg
+
 
         if (this.settingUtils.get("totalSwitch")) {
             this.rmvTopButtonBarIcons(
@@ -225,7 +279,12 @@ export default class siyuan_rmv_btn extends Plugin {
         this.reloadInterface();
     }
 
-    uninstall() {
+    uninstall(){
+        // //remove old trash
+        // this.removeData(unwantedTopBarIcon);
+        // this.removeData(unwantedSideBarIcon);
+        // this.removeData(unwantedItem);
+        // //remove old trash end
         this.removeData(STORAGE_NAME);
         showMessage(this.i18n.uninstall_hint);
     }
