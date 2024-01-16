@@ -37,3 +37,10 @@ Please star⭐ my GitHub repository if you like this plugin. [https://github.com
 [@TCOTC](https://github.com/TCOTC)   ([in b3log](https://ld246.com/member/a2930610542))
 
 [@Wetoria](https://github.com/Wetoria)   ([in b3log](https://ld246.com/member/Wetoria))
+
+# Addtional attach to MIT lincense
+You are free to use the code in this repo, whether it's close source or not, whether it's paid software or not. However, I attached these additional request into the license of this repo:
+ - If you use my code, you have to attach my username "zxkmm" and the link of this repo in three places:
+    1. Code comment.
+    2. Setting interface which related to my code.
+    3. About page of your software/website.
