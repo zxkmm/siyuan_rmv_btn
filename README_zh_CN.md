@@ -4,10 +4,19 @@
 现阶段支持移除顶栏指定按钮，侧栏指定按钮，右键菜单项内容。     
 本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
 
+# 下载
+到release页面下载，或者到思源集市搜索“移除按钮”   
+
 ## changelog 1.1.0 2024.01.12
  - Add icons for reference in setting panel.
  - Not anymore detect or read old config.
  - Delete config data after uninstall, but not when turn off plugin. 
+
+## changelog 1.1.1 2024.01.19
+ - add seperator policy: 
+    - two meet each other, hide one
+    - hide all
+    - don't touch
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
