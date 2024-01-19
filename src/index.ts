@@ -54,7 +54,6 @@ export default class siyuan_rmv_btn extends Plugin {
             if (_seperateHidingPolicy_ == 3) {
                 // test seperate and hide if two meet each other
                 // TODO: didn't handle the situation that more than two seperators meet each other....
-                // 烧脑。。。
                 let startSeparatorIndex = -1;
                 let previousSeparatorHidden = false;
                 for (let i = 0; i < _items_.length; i++) {
@@ -86,7 +85,38 @@ export default class siyuan_rmv_btn extends Plugin {
                         _items_[i].style.display = 'none';
                     }
                 }
-            }
+            } else if (_seperateHidingPolicy_ == 4 ) { // by @Wetoria
+                let separatorList = Array.from(_items_).filter(item => item.classList.contains('b3-menu__separator'));
+                let hiddenList = [];
+                let index = 1;
+                let lastSeparator = separatorList[index - 1];
+                for (; index < separatorList.length; index++) {
+                    const currentSeparator = separatorList[index];
+                    if (currentSeparator.offsetTop <= lastSeparator.offsetTop + 5){
+                        hiddenList.push(currentSeparator);
+                    }
+                    if (currentSeparator.offsetTop != 0) {
+                        lastSeparator = currentSeparator;
+                    }
+                }
+                if (hiddenList.length == separatorList.length - 1) {
+                    hiddenList = [...separatorList];
+                }
+                hiddenList.forEach(x => x.style.display = 'none');
+
+            } else if (_seperateHidingPolicy_ == 5) { // by @zxhd863943427
+                let separatorList = Array.from(_items_).filter(item => item.classList.contains('b3-menu__separator'));
+                let hiddenList = [];
+                for (let index = 1; index < separatorList.length; index++) {
+                    const lastSeparator = separatorList[index - 1];
+                    const currentSeparator = separatorList[index];
+                    if (currentSeparator.offsetTop < lastSeparator.offsetTop + 30){
+                        hiddenList.push(currentSeparator);
+                    }
+                }
+                hiddenList.forEach(x => x.style.display = 'none');
+            } 
+
 
 
         }
@@ -206,6 +236,8 @@ export default class siyuan_rmv_btn extends Plugin {
                 1: this.i18n.seperateHandlePolicyDontTouch,
                 2: this.i18n.seperateHandlePolicyHideAll,
                 3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
+                4: "@Wetoria",
+                5: "@zxhd863943427"
             }
         });
         this.settingUtils.addItem({
