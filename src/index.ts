@@ -300,7 +300,7 @@ export default class siyuan_rmv_btn extends Plugin {
 
     async onunload() {
         await this.settingUtils.save();
-        this.reloadInterface();
+        // this.reloadInterface();
     }
 
     uninstall() {
