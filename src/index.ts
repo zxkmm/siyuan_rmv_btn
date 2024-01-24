@@ -199,7 +199,7 @@ export default class siyuan_rmv_btn extends Plugin {
     }
 
     reloadInterface() {
-        window.location.reload();
+        // window.location.reload();
         showMessage(this.i18n.reload_hint);
     }
 

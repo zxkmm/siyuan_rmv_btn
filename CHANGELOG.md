@@ -29,3 +29,6 @@ now can remove almost all the buttons
 
 ## 1.0.2 2024.01.06
 - fix tag in editor disappeared
+
+## 1.1.3 2024.01.24
+- fix multiple window ain't open
