@@ -32,3 +32,9 @@ now can remove almost all the buttons
 
 ## 1.1.3 2024.01.24
 - fix multiple window ain't open
+
+## changelog 1.1.3 2024.01.27
+- fix warning in editor
+- add custom window control button reload
+- add custom window control button custon position
+- add custom window control button custom layout

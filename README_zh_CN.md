@@ -12,11 +12,12 @@
  - Not anymore detect or read old config.
  - Delete config data after uninstall, but not when turn off plugin. 
 
-## changelog 1.1.1 2024.01.19
- - add seperator policy: 
-    - two meet each other, hide one
-    - hide all
-    - don't touch
+## changelog 1.1.3 2024.01.27
+- fix warning in editor
+- add custom window control button reload
+- add custom window control button custon position
+- add custom window control button custom layout
+
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  

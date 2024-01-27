@@ -1,3 +1,10 @@
+declare global {
+    var windowControls: any;
+    var closeWindow: any;
+    var minWindow: any;
+    var maxWindow: any;
+}
+
 import {
     Plugin,
     showMessage,
@@ -10,6 +17,22 @@ import { SettingUtils } from "./libs/setting-utils";
 const STORAGE_NAME = "menu-config";
 
 const frontEnd = getFrontend();
+
+// TODO: use User-Agent Client Hints API to get platform
+
+// if (navigator.userAgentData) {
+//     navigator.userAgentData.getHighEntropyValues(["platform"])
+//         .then(platform => {
+//             console.log(platform);
+//         })
+//         .catch(error => {
+//             console.error(error);
+//         });
+// } else {
+//     console.log('User-Agent Client Hints API not supported.');
+// }
+
+const opration_system = navigator.platform.toLocaleLowerCase();
 
 const targetNode = document.getElementById('commonMenu'); //it's the menu's id
 
@@ -27,6 +50,50 @@ export default class siyuan_rmv_btn extends Plugin {
         } else {
             // 处理 undefined
             return [];
+        }
+    }
+
+    applyStyles(css) {
+        const head = document.head || document.getElementsByTagName('head')[0];
+        const style = document.createElement('style');
+        head.appendChild(style);
+        style.appendChild(document.createTextNode(css));
+    }
+
+    leftOffsetWindowControlBtns() {
+        const _css_ = `
+        body.body--win32 .fullscreen > .protyle-breadcrumb,
+        body.body--win32 .fullscreen > .block__icons {
+            padding-left: 120px;
+            padding-right: 10px;
+        }
+        `;
+        this.applyStyles(_css_);
+    }
+
+    adjustWindowControlBtnsLayout(_pos_, _layout_, _enabledSystem_) {
+
+        //sys: 1: win 2: linux 3: win and linux
+
+        if (
+            (_enabledSystem_.includes('1') && opration_system.includes('win')) ||
+            (_enabledSystem_.includes('2') && opration_system.includes('linux')) ||
+            (_enabledSystem_.includes('3') && (opration_system.includes('win') || opration_system.includes('linux')))
+        ) {
+            if (_pos_ == 2) {
+                windowControls.style.order = "-1";
+                this.leftOffsetWindowControlBtns();
+            }
+
+            if (_layout_ == 2) {
+                closeWindow.style.order = "-1";
+                minWindow.style.order = "1";
+                maxWindow.style.order = "0";
+            } else if (_layout_ == 3) {
+                closeWindow.style.order = "-1";
+                minWindow.style.order = "0";
+                maxWindow.style.order = "1";
+            }
         }
     }
 
@@ -85,14 +152,14 @@ export default class siyuan_rmv_btn extends Plugin {
                         _items_[i].style.display = 'none';
                     }
                 }
-            } else if (_seperateHidingPolicy_ == 4 ) { // by @Wetoria
-                let separatorList = Array.from(_items_).filter(item => item.classList.contains('b3-menu__separator'));
+            } else if (_seperateHidingPolicy_ == 4) { // by @Wetoria
+                let separatorList = Array.from(_items_ as HTMLElement[]).filter(item => item.classList.contains('b3-menu__separator'));
                 let hiddenList = [];
                 let index = 1;
                 let lastSeparator = separatorList[index - 1];
                 for (; index < separatorList.length; index++) {
                     const currentSeparator = separatorList[index];
-                    if (currentSeparator.offsetTop <= lastSeparator.offsetTop + 5){
+                    if (currentSeparator.offsetTop <= lastSeparator.offsetTop + 5) {
                         hiddenList.push(currentSeparator);
                     }
                     if (currentSeparator.offsetTop != 0) {
@@ -105,17 +172,17 @@ export default class siyuan_rmv_btn extends Plugin {
                 hiddenList.forEach(x => x.style.display = 'none');
 
             } else if (_seperateHidingPolicy_ == 5) { // by @zxhd863943427
-                let separatorList = Array.from(_items_).filter(item => item.classList.contains('b3-menu__separator'));
+                let separatorList = Array.from(_items_ as HTMLElement[]).filter(item => item.classList.contains('b3-menu__separator'));
                 let hiddenList = [];
                 for (let index = 1; index < separatorList.length; index++) {
                     const lastSeparator = separatorList[index - 1];
                     const currentSeparator = separatorList[index];
-                    if (currentSeparator.offsetTop < lastSeparator.offsetTop + 30){
+                    if (currentSeparator.offsetTop < lastSeparator.offsetTop + 30) {
                         hiddenList.push(currentSeparator);
                     }
                 }
                 hiddenList.forEach(x => x.style.display = 'none');
-            } 
+            }
 
 
 
@@ -143,7 +210,7 @@ export default class siyuan_rmv_btn extends Plugin {
         } else {
             var observer = new MutationObserver(function (mutationsList, observer) {
                 for (let mutation of mutationsList) {
-                    if ((mutation.type === 'childList') || (mutation.type === 'subtree')) {
+                    if ((mutation.type === 'childList')) {
                         const buttons = Array.from(document.getElementById('commonMenu').getElementsByTagName('button'));
                         hideButtonsAndSeparators(buttons);
                     }
@@ -261,6 +328,51 @@ export default class siyuan_rmv_btn extends Plugin {
             title: this.i18n.rm_side_title,
             description: this.i18n.rm_side_desc,
         });
+
+
+        this.settingUtils.addItem({
+            key: "enableWindowControlBtnsReload",
+            value: false,
+            type: "checkbox",
+            title: this.i18n.enableWindowControlBtnsReload,
+            description: this.i18n.enableWindowControlBtnsReloadDesc,
+        });
+        this.settingUtils.addItem({
+            key: "windowControlBtnPosition",
+            value: 1,
+            type: "select",
+            title: this.i18n.windowControlBtnPosition,
+            description: this.i18n.windowControlBtnPositionDesc,
+            options: {
+                1: "↗️",
+                2: "↖️",
+            }
+        });
+        this.settingUtils.addItem({
+            key: "windowControlBtnsLayout",
+            value: 1,
+            type: "select",
+            title: this.i18n.windowControlBtnsLayout,
+            description: this.i18n.windowControlBtnsLayoutDesc,
+            options: {
+                1: "➖🔲❌️",
+                2: "❌🔲➖",
+                3: "❌➖🔲",
+            }
+        });
+        this.settingUtils.addItem({
+            key: "windowControlBtnApplyOs",
+            value: 1,
+            type: "select",
+            title: this.i18n.windowControlBtnApplyOs,
+            description: this.i18n.windowControlBtnApplyOsDesc,
+            options: {
+                1: "Windows",
+                2: "Linux",
+                3: "Windows & Linux",
+            }
+        });
+
         this.settingUtils.addItem({
             key: "hint",
             value: "",
@@ -268,6 +380,8 @@ export default class siyuan_rmv_btn extends Plugin {
             title: this.i18n.hintTitle,
             description: this.i18n.hintDesc,
         });
+
+
     }
 
     onLayoutReady() {
@@ -295,6 +409,16 @@ export default class siyuan_rmv_btn extends Plugin {
                 this.settingUtils.get("listenImplementation"),
                 this.settingUtils.get("seperateHandlePolicy")
             )
+
+            if (this.settingUtils.get("enableWindowControlBtnsReload")) {
+                this.adjustWindowControlBtnsLayout(
+                    this.settingUtils.get("windowControlBtnPosition"),
+                    this.settingUtils.get("windowControlBtnsLayout"),
+                    this.settingUtils.get("windowControlBtnApplyOs")
+                );
+            }
+
+
         }
     }
 

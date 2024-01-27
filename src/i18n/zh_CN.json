@@ -18,6 +18,14 @@
   "seperateHandlePolicyDontTouch":"不处理",
   "seperateHandlePolicyHideAll":"全部隐藏",
   "seperateHandlePolicyHideIfTwoMeetEachOther":"如果出现两个相邻,则隐藏一个",
+  "enableWindowControlBtnsReload": "启用窗口控制按钮自定义",
+  "enableWindowControlBtnsReloadDesc": "",
+  "windowControlBtnPosition": "窗口控制按钮位置",
+  "windowControlBtnPositionDesc": "",
+  "windowControlBtnsLayout": "窗口控制按钮布局",
+  "windowControlBtnsLayoutDesc": "",
+  "windowControlBtnApplyOs": "在哪些系统上自定义窗口控制按钮",
+  "windowControlBtnApplyOsDesc": "由于 MacOS 的窗口控制按钮是由系统绘制的, 所以在 MacOS 上无法自定义",
   "hintTitle": "关于 v1.1.2",
   "hintDesc": "<ul><li>● 由<a href='https://github.com/zxkmm'>zxkmm</a>制作， MIT 协议开源。</li><li>● 如果您喜欢这个插件，请给我的 GitHub 仓库点亮免费的星星⭐（Star）。</li><li>● 链接：<a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● 如果您想隐藏与思源商业部分相关的元素，请在使用前考虑向思源的制作者（即@D和@V）捐赠（不是捐给我）。</li></ul>"
 }

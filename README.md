@@ -11,11 +11,11 @@ go to release page or go to SiYuan's market and search `siyuan_rmv_btn`
  - Not anymore detect or read old config.
  - Delete config data after uninstall, but not when turn off plugin. 
 
- ## changelog 1.1.1 2024.01.19
- - add seperator policy: 
-    - two meet each other, hide one
-    - hide all
-    - don't touch
+## changelog 1.1.3 2024.01.27
+- fix warning in editor
+- add custom window control button reload
+- add custom window control button custon position
+- add custom window control button custom layout
 
 # Warning
 - If you removed too much items and end up stopped working, please go to your workspace and delete the entire ``siyuan_rmv_btn`` folder.
