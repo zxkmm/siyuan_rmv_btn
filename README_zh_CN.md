@@ -1,5 +1,13 @@
 # 思源移除按钮
 
+## 恳请：
+## 如果您有空的话，恳求您给我的GitHub仓库点一个**免费**的Star（星星）。
+## 本插件是完全开源免费的，我相信任何经营模式都有可取之处，本插件的开源免费经营模式，需要的就是您的鼓励。
+## 我是毕业大学生，在艰难的就业市场中正在寻找工作。
+## 您给我点的免费Star将很大程度帮助我解决温饱问题，再次感谢！
+## 链接：https://github.com/zxkmm/siyuan_rmv_btn
+## 
+
 一个SiYuan插件，可以删除菜单/底栏/顶栏中你不使用的按钮。  
 现阶段支持移除顶栏指定按钮，侧栏指定按钮，右键菜单项内容。     
 本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
@@ -12,7 +20,7 @@
  - Not anymore detect or read old config.
  - Delete config data after uninstall, but not when turn off plugin. 
 
-## changelog 1.1.3 2024.01.27
+## changelog 1.1.4 2024.03.07
 - fix warning in editor
 - add custom window control button reload
 - add custom window control button custon position
