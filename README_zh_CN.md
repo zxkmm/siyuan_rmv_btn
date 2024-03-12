@@ -26,6 +26,9 @@
 - add custom window control button custon position
 - add custom window control button custom layout
 
+## changelog 1.1.5 2024.03.12
+- add docker support
+
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
