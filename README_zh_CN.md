@@ -29,6 +29,9 @@
 ## changelog 1.1.5 2024.03.12
 - add docker support
 
+## changelog 1.1.6 2024.03.19
+- fix issue that you can still select item by up and down arrow key on keyboard after hiding.
+
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  

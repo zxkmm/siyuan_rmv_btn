@@ -97,7 +97,7 @@ export default class siyuan_rmv_btn extends Plugin {
         }
     }
 
-    rmvMenuItems(_toRemoveListArray_, _monitorImplementation_, _seperateHidingPolicy_) {
+    rmvMenuItems(_toRemoveListArray_, _monitorImplementation_, _seperateHidingPolicy_,_itemRemovePolicy_) {
 
         //seperate pilocy: 1; don't touch 
         //                2: hide all
@@ -111,8 +111,12 @@ export default class siyuan_rmv_btn extends Plugin {
                     let labelElement = item.getElementsByClassName('b3-menu__label')[0];
                     if (labelElement) {
                         let span_text = labelElement.textContent.trim();
-                        if (_toRemoveListArray_.includes(span_text)) {
-                            item.style.display = 'none';
+                        if (_toRemoveListArray_.includes(span_text)) {     
+                            if(_itemRemovePolicy_ == 1)  {
+                                item.remove(); 
+                            }else if(_itemRemovePolicy_ ==2){
+                                item.style.display = 'none';
+                            }
                         }
                     }
                 }
@@ -308,6 +312,18 @@ export default class siyuan_rmv_btn extends Plugin {
             }
         });
         this.settingUtils.addItem({
+            key: "itemRemovePolicy",
+            value: 1,
+            type: "select",
+            title: this.i18n.itemRemovePolicy,
+            description: this.i18n.itemRemovePolicydesc,
+            options: {
+                1: this.i18n.itemRemovePolicyRemove,
+                2: this.i18n.itemRemovePolicyDisplayNone,
+                // 3: this.i18n.seperateHandlePolicyCss
+            }
+        });
+        this.settingUtils.addItem({
             key: "unwantedMenuItem",
             value: "",
             type: "textarea",
@@ -407,7 +423,8 @@ export default class siyuan_rmv_btn extends Plugin {
                     this.settingUtils.get("unwantedMenuItem")
                 ),
                 this.settingUtils.get("listenImplementation"),
-                this.settingUtils.get("seperateHandlePolicy")
+                this.settingUtils.get("seperateHandlePolicy"),
+                this.settingUtils.get("itemRemovePolicy")
             )
 
             if (this.settingUtils.get("enableWindowControlBtnsReload")) {
