@@ -30,11 +30,25 @@ now can remove almost all the buttons
 ## 1.0.2 2024.01.06
 - fix tag in editor disappeared
 
-## 1.1.3 2024.01.24
+## 1.1.0 2024.01.12
+ - add icons for reference in setting panel
+ - not anymore detect or read old config
+ - delete config data after uninstall, but not when turn off plugin
+
+## 1.1.2 2024.01.24
 - fix multiple window ain't open
 
-## changelog 1.1.3 2024.01.27
+## 1.1.3 2024.01.27
 - fix warning in editor
 - add custom window control button reload
 - add custom window control button custon position
 - add custom window control button custom layout
+
+## 1.1.5 2024.03.12
+- add docker support
+
+## 1.1.6 2024.03.19
+- fix issue that you can still select item by up and down arrow key on keyboard after hiding.
+
+## 1.1.7 2024.04.30
+- add command palette button
