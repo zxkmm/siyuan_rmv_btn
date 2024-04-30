@@ -3,13 +3,13 @@ A SiYuan Plugin that able to remove the buttons in menu that you don't really us
 It currently support removing top bar icons, side bar icons, and menus with id `commonMenu`, which are two icons on top right corner of each doc, and calling from the right side of each paragraph. 
 
 # Download
-go to release page or go to SiYuan's market and search `siyuan_rmv_btn`    
+go to release page or go to SiYuan's market and search `siyuan_rmv_btn` 
 
 
 ## changelog 1.1.0 2024.01.12
- - Add icons for reference in setting panel.
- - Not anymore detect or read old config.
- - Delete config data after uninstall, but not when turn off plugin. 
+ - add icons for reference in setting panel
+ - not anymore detect or read old config
+ - delete config data after uninstall, but not when turn off plugin
 
 ## changelog 1.1.3 2024.01.27
 - fix warning in editor
@@ -17,8 +17,17 @@ go to release page or go to SiYuan's market and search `siyuan_rmv_btn`
 - add custom window control button custon position
 - add custom window control button custom layout
 
+## changelog 1.1.5 2024.03.12
+- add docker support
+
+## changelog 1.1.6 2024.03.19
+- fix issue that you can still select item by up and down arrow key on keyboard after hiding.
+
+## changelog 1.1.7 2024.04.30
+- add command palette button
+
 # Warning
-- If you removed too much items and end up stopped working, please go to your workspace and delete the entire ``siyuan_rmv_btn`` folder.
+- If you removed too much items and end up stopped working, please go to your workspace and delete the entire `siyuan_rmv_btn` folder.
 - The handler handle main interface of SiYuan as soon as DOM changes. In which case if you added too many items, the performance would be influenced.     
 - This plugin didn't do extra work to prevent JS injection, in which case you should be more careful using it when in browser or hosted in public net.   
 - If items you are trying to hide is related to SiYuan's commercial part, please consider to donate to @D and @V (not me) because they lives by writing open-source codes.    

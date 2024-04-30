@@ -2,7 +2,7 @@
   "name": "siyuan_rmv_btn",
   "author": "zxkmm",
   "url": "https://github.com/zxkmm/siyuan_rmv_btn",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "minAppVersion": "2.10.14",
   "backends": [
     "windows",
@@ -37,12 +37,15 @@
     ]
   },
   "keywords": [
+    "按钮",
     "移除",
     "隐藏",
     "菜单",
+    "button",
     "remove",
     "hide",
     "menu",
-    "siyuan_rmv_btn"
+    "siyuan_rmv_btn",
+    "zxkmm"
   ]
 }

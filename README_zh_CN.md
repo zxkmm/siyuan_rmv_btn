@@ -13,14 +13,14 @@
 本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
 
 # 下载
-到release页面下载，或者到思源集市搜索“移除按钮”   
+到release页面下载，或者到思源集市搜索“移除按钮”
 
 ## changelog 1.1.0 2024.01.12
- - Add icons for reference in setting panel.
- - Not anymore detect or read old config.
- - Delete config data after uninstall, but not when turn off plugin. 
+ - add icons for reference in setting panel
+ - not anymore detect or read old config
+ - delete config data after uninstall, but not when turn off plugin
 
-## changelog 1.1.4 2024.03.07
+## changelog 1.1.3 2024.01.27
 - fix warning in editor
 - add custom window control button reload
 - add custom window control button custon position
@@ -32,6 +32,8 @@
 ## changelog 1.1.6 2024.03.19
 - fix issue that you can still select item by up and down arrow key on keyboard after hiding.
 
+## changelog 1.1.7 2024.04.30
+- add command palette button
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
@@ -44,7 +46,7 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 
 # 警告
 
-- 如果你移除了太多东西导致无法正常操作，请到思源工作空间删除整个``siyuan_rmv_btn``文件夹。
+- 如果你移除了太多东西导致无法正常操作，请到思源工作空间删除整个`siyuan_rmv_btn`文件夹。
 
 - 插件在 DOM 发生变化时会立即注入思源的主界面。在这种情况下，如果添加的项目过多，性能将受到影响。  
 
