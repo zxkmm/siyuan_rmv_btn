@@ -56,43 +56,6 @@ export default class siyuan_rmv_btn extends Plugin {
     style.appendChild(document.createTextNode(css));
   }
 
-  leftOffsetWindowControlBtns() {
-    const _css_ = `
-        body.body--win32 .fullscreen > .protyle-breadcrumb,
-        body.body--win32 .fullscreen > .block__icons {
-            padding-left: 120px;
-            padding-right: 10px;
-        }
-        `;
-    this.applyStyles(_css_);
-  }
-
-  adjustWindowControlBtnsLayout(_pos_, _layout_, _enabledSystem_) {
-    //sys: 1: win 2: linux 3: win and linux
-
-    if (
-      (_enabledSystem_.includes("1") && opration_system.includes("win")) ||
-      (_enabledSystem_.includes("2") && opration_system.includes("linux")) ||
-      (_enabledSystem_.includes("3") &&
-        (opration_system.includes("win") || opration_system.includes("linux")))
-    ) {
-      if (_pos_ == 2) {
-        windowControls.style.order = "-1";
-        this.leftOffsetWindowControlBtns();
-      }
-
-      if (_layout_ == 2) {
-        closeWindow.style.order = "-1";
-        minWindow.style.order = "1";
-        maxWindow.style.order = "0";
-      } else if (_layout_ == 3) {
-        closeWindow.style.order = "-1";
-        minWindow.style.order = "0";
-        maxWindow.style.order = "1";
-      }
-    }
-  }
-
   rmvMenuItems(
     _toRemoveListArray_,
     _monitorImplementation_,
@@ -359,47 +322,12 @@ export default class siyuan_rmv_btn extends Plugin {
     });
 
     this.settingUtils.addItem({
-      key: "enableWindowControlBtnsReload",
-      value: false,
-      type: "checkbox",
-      title: this.i18n.enableWindowControlBtnsReload,
-      description: this.i18n.enableWindowControlBtnsReloadDesc,
-    });
-    this.settingUtils.addItem({
-      key: "windowControlBtnPosition",
-      value: 1,
-      type: "select",
-      title: this.i18n.windowControlBtnPosition,
-      description: this.i18n.windowControlBtnPositionDesc,
-      options: {
-        1: "↗️",
-        2: "↖️",
-      },
-    });
-    this.settingUtils.addItem({
-      key: "windowControlBtnsLayout",
-      value: 1,
-      type: "select",
-      title: this.i18n.windowControlBtnsLayout,
-      description: this.i18n.windowControlBtnsLayoutDesc,
-      options: {
-        1: "➖🔲❌️",
-        2: "❌🔲➖",
-        3: "❌➖🔲",
-      },
-    });
-    this.settingUtils.addItem({
-      key: "windowControlBtnApplyOs",
-      value: 1,
-      type: "select",
-      title: this.i18n.windowControlBtnApplyOs,
-      description: this.i18n.windowControlBtnApplyOsDesc,
-      options: {
-        1: "Windows",
-        2: "Linux",
-        3: "Windows & Linux",
-      },
-    });
+        key: "hintForRemovedWindowsControlButtons",
+        value: "",
+        type: "hint",
+        title: this.i18n.hintForRemovedWindowsControlButtons,
+        description: this.i18n.hintForRemovedWindowsControlButtonsDesc,
+      });
 
     this.settingUtils.addItem({
       key: "hint",
@@ -460,13 +388,6 @@ export default class siyuan_rmv_btn extends Plugin {
         this.settingUtils.get("itemRemovePolicy")
       );
 
-      if (this.settingUtils.get("enableWindowControlBtnsReload")) {
-        this.adjustWindowControlBtnsLayout(
-          this.settingUtils.get("windowControlBtnPosition"),
-          this.settingUtils.get("windowControlBtnsLayout"),
-          this.settingUtils.get("windowControlBtnApplyOs")
-        );
-      }
     }
   }
 

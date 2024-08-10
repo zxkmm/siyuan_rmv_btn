@@ -32,6 +32,8 @@
   "windowControlBtnApplyOs": "在哪些系统上自定义窗口控制按钮",
   "windowControlBtnApplyOsDesc": "由于 MacOS 的窗口控制按钮是由系统绘制的, 所以在 MacOS 上无法自定义",
   "rmvBtnSetting":"移除按钮插件：设置",
+  "hintForRemovedWindowsControlButtons":"窗口控制按钮微调已经移动到另一个插件",
+  "hintForRemovedWindowsControlButtonsDesc":"如果您想使用它，请安装 主窗口微调 插件",
 
   "hintTitle": "关于 v1.1.2",
   "hintDesc": "<ul><li>● 由 <a href='https://github.com/zxkmm'>zxkmm</a> 和 <a href='https://github.com/TCOTC'>TCOTC</a> 制作， MIT 协议开源。</li><li>● 如果您喜欢这个插件，请给我的 GitHub 仓库点亮免费的星星⭐（Star）。</li><li>● 链接：<a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● 如果您想隐藏与思源商业部分相关的元素，请在使用前考虑向思源的制作者（即@D和@V）<a href='https://ld246.com/sponsor'>捐赠</a>（不是捐给我）。</li></ul>"
