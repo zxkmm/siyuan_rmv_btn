@@ -31,7 +31,7 @@
   "windowControlBtnsLayoutDesc": "",
   "windowControlBtnApplyOs": "Customize window control buttons on which systems",
   "windowControlBtnApplyOsDesc": "Since the window control buttons on MacOS are drawn by the system, they cannot be customized on MacOS",
-
+  "rmvBtnSetting":"Remove Button PLugin: Settings",
   "hintTitle": "About v1.1.2",
   "hintDesc": "<ul><li>● By <a href='https://github.com/zxkmm'>zxkmm</a> and <a href='https://github.com/TCOTC'>TCOTC</a>, and open source under the MIT license.</li><li>● Please star⭐ my GitHub repository if you like this plugin.</li><li>● Link: <a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● If you want to hide elements related to SiYuan's commercial part, please consider donating to the makers of SiYuan (AKA @D and @V) （not me） before using.</li></ul>"
 }
