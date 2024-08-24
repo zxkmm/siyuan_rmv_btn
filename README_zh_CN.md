@@ -69,8 +69,6 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 
 [@TCOTC](https://github.com/TCOTC)   ([in b3log](https://ld246.com/member/a2930610542))
 
-[@Wetoria](https://github.com/Wetoria)   ([in b3log](https://ld246.com/member/Wetoria))  
-
 [@zxhd863943427](https://github.com/zxhd863943427) ([in b3log](https://ld246.com/member/zxhd86))  
 
 

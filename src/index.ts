@@ -30,7 +30,7 @@ const frontEnd = getFrontend();
 
 const opration_system = navigator.platform.toLocaleLowerCase();
 
-const targetNode = document.getElementById("commonMenu"); //it's the menu's id
+const targetNode = document.getElementById("commonMenu"); //it's the menu's id, fetch firstly and hoping it increase some performance.
 
 export default class siyuan_rmv_btn extends Plugin {
   private settingUtils: SettingUtils;
@@ -119,27 +119,6 @@ export default class siyuan_rmv_btn extends Plugin {
             _items_[i].style.display = "none";
           }
         }
-      } else if (_seperateHidingPolicy_ == 4) {
-        // by @Wetoria
-        let separatorList = Array.from(_items_ as HTMLElement[]).filter(
-          (item) => item.classList.contains("b3-menu__separator")
-        );
-        let hiddenList = [];
-        let index = 1;
-        let lastSeparator = separatorList[index - 1];
-        for (; index < separatorList.length; index++) {
-          const currentSeparator = separatorList[index];
-          if (currentSeparator.offsetTop <= lastSeparator.offsetTop + 5) {
-            hiddenList.push(currentSeparator);
-          }
-          if (currentSeparator.offsetTop != 0) {
-            lastSeparator = currentSeparator;
-          }
-        }
-        if (hiddenList.length == separatorList.length - 1) {
-          hiddenList = [...separatorList];
-        }
-        hiddenList.forEach((x) => (x.style.display = "none"));
       } else if (_seperateHidingPolicy_ == 5) {
         // by @zxhd863943427
         let separatorList = Array.from(_items_ as HTMLElement[]).filter(
@@ -174,9 +153,7 @@ export default class siyuan_rmv_btn extends Plugin {
         for (let mutation of mutationsList) {
           if (mutation.type) {
             const buttons = Array.from(
-              document
-                .getElementById("commonMenu")
-                .getElementsByTagName("button")
+              targetNode.getElementsByTagName("button")
             );
             hideButtonsAndSeparators(buttons);
           }
@@ -189,9 +166,7 @@ export default class siyuan_rmv_btn extends Plugin {
         for (let mutation of mutationsList) {
           if (mutation.type === "childList") {
             const buttons = Array.from(
-              document
-                .getElementById("commonMenu")
-                .getElementsByTagName("button")
+              targetNode.getElementsByTagName("button")
             );
             hideButtonsAndSeparators(buttons);
           }
@@ -283,7 +258,6 @@ export default class siyuan_rmv_btn extends Plugin {
         1: this.i18n.seperateHandlePolicyDontTouch,
         2: this.i18n.seperateHandlePolicyHideAll,
         3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
-        4: "@Wetoria",
         5: "@zxhd863943427",
       },
     });
@@ -322,12 +296,12 @@ export default class siyuan_rmv_btn extends Plugin {
     });
 
     this.settingUtils.addItem({
-        key: "hintForRemovedWindowsControlButtons",
-        value: "",
-        type: "hint",
-        title: this.i18n.hintForRemovedWindowsControlButtons,
-        description: this.i18n.hintForRemovedWindowsControlButtonsDesc,
-      });
+      key: "hintForRemovedWindowsControlButtons",
+      value: "",
+      type: "hint",
+      title: this.i18n.hintForRemovedWindowsControlButtons,
+      description: this.i18n.hintForRemovedWindowsControlButtonsDesc,
+    });
 
     this.settingUtils.addItem({
       key: "hint",
@@ -337,33 +311,35 @@ export default class siyuan_rmv_btn extends Plugin {
       description: this.i18n.hintDesc,
     });
 
-    if(this.isMobile){
-    this.addTopBar({
-      icon: "iconDock",
-      title: this.isMobile ? this.i18n.rmvBtnSetting : this.i18n.rmvBtnSetting,
-      position: "right",
-      callback: () => {
-        if (this.isMobile) {
-          this.openSetting();
+    if (this.isMobile) {
+      this.addTopBar({
+        icon: "iconDock",
+        title: this.isMobile
+          ? this.i18n.rmvBtnSetting
+          : this.i18n.rmvBtnSetting,
+        position: "right",
+        callback: () => {
+          if (this.isMobile) {
+            this.openSetting();
 
-          // this.addMenu();
-          // console.log("mobile");
+            // this.addMenu();
+            // console.log("mobile");
 
-          //   } else {
-          //     let rect = topBarElement.getBoundingClientRect();
-          //     if (rect.width === 0) {
-          //       rect = document.querySelector("#barMore").getBoundingClientRect();
-          //     }
-          //     if (rect.width === 0) {
-          //       rect = document
-          //         .querySelector("#barPlugins")
-          //         .getBoundingClientRect();
-          //     }
-          //     // this.swapStreamerMode();
-        }
-      },
-    });
-}
+            //   } else {
+            //     let rect = topBarElement.getBoundingClientRect();
+            //     if (rect.width === 0) {
+            //       rect = document.querySelector("#barMore").getBoundingClientRect();
+            //     }
+            //     if (rect.width === 0) {
+            //       rect = document
+            //         .querySelector("#barPlugins")
+            //         .getBoundingClientRect();
+            //     }
+            //     // this.swapStreamerMode();
+          }
+        },
+      });
+    }
   }
 
   onLayoutReady() {
@@ -387,7 +363,6 @@ export default class siyuan_rmv_btn extends Plugin {
         this.settingUtils.get("seperateHandlePolicy"),
         this.settingUtils.get("itemRemovePolicy")
       );
-
     }
   }
 
