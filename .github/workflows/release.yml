@@ -48,6 +48,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # Replace "_G_A_ID_" with actual GA ID from secret
+      - name: Replace GA_ID in code
+        run: |
+          find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.tsx" \) -exec sed -i 's/_G_A_ID_NOT_DEFINED_/${{ secrets.G_A_ID }}/g' {} +
+
+
       # Build for production, 这一步会生成一个 package.zip
       - name: Build for production
         run: pnpm build

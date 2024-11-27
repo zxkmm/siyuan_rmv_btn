@@ -1,14 +1,11 @@
-declare global {
-  var windowControls: any;
-  var closeWindow: any;
-  var minWindow: any;
-  var maxWindow: any;
-}
-
 import { Plugin, showMessage, getFrontend } from "siyuan";
 import "@/index.scss";
 
 import { SettingUtils } from "./libs/setting-utils";
+
+import Analytics from 'analytics';
+import googleAnalytics from '@analytics/google-analytics';
+import analytics from "analytics";
 
 const STORAGE_NAME = "menu-config";
 
@@ -35,6 +32,40 @@ const targetNode = document.getElementById("commonMenu"); //it's the menu's id, 
 export default class siyuan_rmv_btn extends Plugin {
   private settingUtils: SettingUtils;
   private isMobile: boolean;
+
+
+  statistics() {
+    var _ = "_G_A_ID_NOT_DEFINED_";
+    if (_ == "_G_A_ID_NOT_DEFINED_") {
+      console.log("gh pipeline failed");
+      return;
+    }
+    const analytics = Analytics({
+      app: 'siyuan_rmv_btn',
+      plugins: [
+        googleAnalytics({
+          measurementIds: [_],
+        }),
+      ],
+    });
+
+    analytics.page();
+
+    let userName = 'NOT_LOGGED_IN';
+    let userId = 'NOT_LOGGED_IN';
+    if (window.siyuan.user) {
+      userName = window.siyuan.user.userName;
+    }
+    if (window.siyuan.user) {
+      userId = window.siyuan.user.userId;
+    }
+
+    analytics.track('plugin_loaded', {
+      plugin_version: '1.1.10',
+      user_name: userName,
+      user_id: userId,
+    });
+  }
 
   convertStringToArray(userInput) {
     if (userInput) {
@@ -364,6 +395,9 @@ export default class siyuan_rmv_btn extends Plugin {
         this.settingUtils.get("itemRemovePolicy")
       );
     }
+
+    this.statistics();
+
   }
 
   async onunload() {

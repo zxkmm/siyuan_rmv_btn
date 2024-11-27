@@ -1,6 +1,6 @@
 {
   "name": "siyuan_rmv_btn",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "type": "module",
   "description": "A plugin to remove menu items you don't really need.",
   "repository": "https://github.com/zxkmm/siyuan_rmv_btn",
@@ -29,5 +29,9 @@
     "vite": "^4.3.7",
     "vite-plugin-static-copy": "^0.15.0",
     "vite-plugin-zip-pack": "^1.0.5"
+  },
+  "dependencies": {
+    "@analytics/google-analytics": "^1.0.7",
+    "analytics": "^0.8.14"
   }
 }
