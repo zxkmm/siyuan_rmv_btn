@@ -47,6 +47,14 @@ export default class siyuan_rmv_btn extends Plugin {
 
     this.settingUtils = new SettingUtils(this, STORAGE_NAME);
     this.settingUtils.load();
+
+    this.settingUtils.addItem({
+      key: "begging",
+      value: "",
+      type: "hint",
+      title: this.i18n.beggingTitle,
+      description: this.i18n.beggingDesc,
+    });
     this.settingUtils.addItem({
       key: "totalSwitch",
       value: true,

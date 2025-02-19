@@ -36,5 +36,9 @@
   "hintForRemovedWindowsControlButtonsDesc":"如果您想使用它，请安装 主窗口微调 插件",
 
   "hintTitle": "关于 v1.1.2",
-  "hintDesc": "<ul><li>● 由 <a href='https://github.com/zxkmm'>zxkmm</a> 和 <a href='https://github.com/TCOTC'>TCOTC</a> 制作， MIT 协议开源。</li><li>● 如果您喜欢这个插件，请给我的 GitHub 仓库点亮免费的星星⭐（Star）。</li><li>● 链接：<a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● 如果您想隐藏与思源商业部分相关的元素，请在使用前考虑向思源的制作者（即@D和@V）<a href='https://ld246.com/sponsor'>捐赠</a>（不是捐给我）。</li></ul>"
+  "hintDesc": "<ul><li>● 由 <a href='https://github.com/zxkmm'>zxkmm</a> 和 <a href='https://github.com/TCOTC'>TCOTC</a> 制作， MIT 协议开源。</li><li>● 如果您喜欢这个插件，请给我的 GitHub 仓库点亮免费的星星⭐（Star）。</li><li>● 链接：<a href='https://github.com/zxkmm/siyuan_rmv_btn'>https://github.com/zxkmm/siyuan_rmv_btn</a></li><li>● 如果您想隐藏与思源商业部分相关的元素，请在使用前考虑向思源的制作者（即@D和@V）<a href='https://ld246.com/sponsor'>捐赠</a>（不是捐给我）。</li></ul>",
+
+  "beggingTitle": "🙏乞讨🙏",
+  "beggingDesc": "这款插件是开源免费的，因此我需要您的鼓励.<br>如果您喜欢这款插件为您带来的功能，您可以考虑捐款给我，帮助我解决温饱🍚问题：<a href='https://afdian.com/p/501a9364e05811ef967752540025c377'>捐款</a>。（捐款不会解锁更多功能）  <br>如果您经济不宽裕，您可以考虑给<a href='https://github.com/zxkmm/siyuan_rmv_btn'>我的GitHub仓库</a>点一下免费的⭐星星鼓励我。  <br>如果您认为您或者您认识的人需要我的技能，欢迎随时雇用我。"
+
 }
