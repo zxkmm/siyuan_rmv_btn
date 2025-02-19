@@ -16,6 +16,8 @@ import {
   rmvSideBarIcons,
 } from "./css_injection";
 
+import {slash_menu_hardcoded_name_map} from "./sy_hardcoded_name_map";
+
 const STORAGE_NAME = "menu-config";
 
 const frontEnd = getFrontend();
@@ -54,25 +56,7 @@ export default class siyuan_rmv_btn extends Plugin {
       type: "hint",
       title: this.i18n.beggingTitle,
       description: this.i18n.beggingDesc,
-    });
-    this.settingUtils.addItem({
-      key: "totalSwitch",
-      value: true,
-      type: "checkbox",
-      title: this.i18n.totalSwitch,
-      description: this.i18n.totalSwitchDesc,
-    });
-    this.settingUtils.addItem({
-      key: "listenImplementation",
-      value: 1,
-      type: "select",
-      title: this.i18n.listenImplementation,
-      description: this.i18n.listenImplementationdesc,
-      options: {
-        1: "DOMNodeInserted",
-        2: "MutationObserver",
-        3: "MutationObserver(type hard coded)",
-      },
+      tab: "Window Buttons"
     });
     this.settingUtils.addItem({
       key: "seperateHandlePolicy",
@@ -86,18 +70,7 @@ export default class siyuan_rmv_btn extends Plugin {
         3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
         5: "@zxhd863943427",
       },
-    });
-    this.settingUtils.addItem({
-      key: "itemRemovePolicy",
-      value: 1,
-      type: "select",
-      title: this.i18n.itemRemovePolicy,
-      description: this.i18n.itemRemovePolicydesc,
-      options: {
-        1: this.i18n.itemRemovePolicyRemove,
-        2: this.i18n.itemRemovePolicyDisplayNone,
-        // 3: this.i18n.seperateHandlePolicyCss
-      },
+      tab: "Window Buttons"
     });
     this.settingUtils.addItem({
       key: "unwantedMenuItem",
@@ -105,6 +78,7 @@ export default class siyuan_rmv_btn extends Plugin {
       type: "textarea",
       title: this.i18n.rm_menu_title,
       description: this.i18n.rm_menu_desc,
+      tab: "Window Buttons1"
     });
     this.settingUtils.addItem({
       key: "unwantedTopButtonBarIcon",
@@ -120,6 +94,17 @@ export default class siyuan_rmv_btn extends Plugin {
       title: this.i18n.rm_side_title,
       description: this.i18n.rm_side_desc,
     });
+
+    /*****slash menu *******/
+    console.log(slash_menu_hardcoded_name_map);
+    for (const [key, value] of slash_menu_hardcoded_name_map) {
+      this.settingUtils.addItem({
+        key: key,
+        value: false,
+        type: "checkbox",
+        title: value.english_human_read_name,
+      });
+    }
 
     this.settingUtils.addItem({
       key: "hintForRemovedWindowsControlButtons",
@@ -172,7 +157,7 @@ export default class siyuan_rmv_btn extends Plugin {
     this.loadData(STORAGE_NAME);
     this.settingUtils.load();
 
-    if (this.settingUtils.get("totalSwitch")) {
+    if (true) {
       rmvTopButtonBarIcons(
         convertStringToArray(this.settingUtils.get("unwantedTopButtonBarIcon"))
       );

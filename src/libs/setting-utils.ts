@@ -8,6 +8,7 @@
  */
 
 import { Plugin, Setting } from 'siyuan';
+// import { slash_menu_hardcoded_name_map } from '../sy_hardcoded_name_map';
 
 export class SettingUtils {
     plugin: Plugin;
@@ -150,7 +151,68 @@ export class SettingUtils {
                 hintElement.className = 'b3-label fn__flex-center';
                 itemElement = hintElement;
                 break;
+            case 'checkbox_group': {
+                // Create a container to hold all dynamic checkboxes.
+                let container: HTMLDivElement = document.createElement('div');
+                container.className = "checkbox-group-container";
 
+                // Helper: parse stored string (format: "identifier,checked" per line) into a Map.
+                const parseCheckboxGroupValue = (value: string): Map<string, boolean> => {
+                    const result = new Map<string, boolean>();
+                    if (value) {
+                        value.split('\n').forEach(line => {
+                            const [identifier, checked] = line.split(',');
+                            if (identifier && checked !== undefined) {
+                                result.set(identifier.trim(), checked.trim().toLowerCase() === 'true');
+                            }
+                        });
+                    }
+                    return result;
+                };
+
+                // Helper: serialize a Map back to the string format.
+                const serializeCheckboxGroupValue = (map: Map<string, boolean>): string => {
+                    let lines: string[] = [];
+                    map.forEach((checked, identifier) => {
+                        lines.push(`${identifier},${checked}`);
+                    });
+                    return lines.join('\n');
+                };
+
+                // Get identifiers dynamically from your map keys.
+                const identifiers = Array.from(slash_menu_hardcoded_name_map.keys());
+
+                // Parse the current value (stored as string) into state.
+                let state = parseCheckboxGroupValue(item.value);
+
+                // For each identifier, create a checkbox with a label.
+                identifiers.forEach(id => {
+                    let wrapper = document.createElement('div');
+                    wrapper.className = "checkbox-item";
+
+                    let checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    // Set checkbox state, defaulting to false.
+                    checkbox.checked = state.get(id) || false;
+                    checkbox.id = `checkbox-${id}`;
+
+                    let label = document.createElement('label');
+                    label.htmlFor = checkbox.id;
+                    label.innerText = id;
+
+                    wrapper.appendChild(checkbox);
+                    wrapper.appendChild(label);
+                    container.appendChild(wrapper);
+
+                    // On change, update the state and write back as string.
+                    checkbox.onchange = () => {
+                        state.set(id, checkbox.checked);
+                        item.value = serializeCheckboxGroupValue(state);
+                    };
+                });
+                itemElement = container;
+                break;
+            }
         }
         this.elements.set(item.key, itemElement);
         this.plugin.setting.addItem({
