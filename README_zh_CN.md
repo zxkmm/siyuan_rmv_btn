@@ -1,39 +1,19 @@
 # 思源移除按钮
 
-## 恳请：
-## 如果您有空的话，恳求您给我的GitHub仓库点一个**免费**的Star（星星）。
-## 本插件是完全开源免费的，我相信任何经营模式都有可取之处，本插件的开源免费经营模式，需要的就是您的鼓励。
-## 我是毕业大学生，在艰难的就业市场中正在寻找工作。
-## 您给我点的免费Star将很大程度帮助我解决温饱问题，再次感谢！
-## 链接：https://github.com/zxkmm/siyuan_rmv_btn
-## 
+## 乞讨
+这款插件是开源免费的，因此我需要您的鼓励。  
+如果您喜欢这款插件为您带来的功能，您可以考虑捐款给我，帮助我解决温饱问题：[捐款](https://afdian.com/p/501a9364e05811ef967752540025c377)。（捐款不会解锁更多功能）  
+如果您经济不宽裕，您可以考虑给[我的GitHub仓库](https://github.com/zxkmm/siyuan_rmv_btn)点一下免费的星星鼓励我。  
+如果您认为您或者您认识的人需要我的技能，欢迎随时雇用我。 
 
+
+# 功能
 一个SiYuan插件，可以删除菜单/底栏/顶栏中你不使用的按钮。  
 现阶段支持移除顶栏指定按钮，侧栏指定按钮，右键菜单项内容。     
 本插件在MIT协议下开源，没有联网行为，也没有从远端fetch恶意代码的能力。  
 
 # 下载
 到release页面下载，或者到思源集市搜索“移除按钮”
-
-## changelog 1.1.0 2024.01.12
- - add icons for reference in setting panel
- - not anymore detect or read old config
- - delete config data after uninstall, but not when turn off plugin
-
-## changelog 1.1.3 2024.01.27
-- fix warning in editor
-- add custom window control button reload
-- add custom window control button custon position
-- add custom window control button custom layout
-
-## changelog 1.1.5 2024.03.12
-- add docker support
-
-## changelog 1.1.6 2024.03.19
-- fix issue that you can still select item by up and down arrow key on keyboard after hiding.
-
-## changelog 1.1.7 2024.04.30
-- add command palette button
 
 # 链接
 repo/源码：https://github.com/zxkmm/siyuan_rmv_btn  
@@ -49,10 +29,6 @@ repo/源码：https://github.com/zxkmm/siyuan_rmv_btn
 - 如果你移除了太多东西导致无法正常操作，请到思源工作空间删除整个`siyuan_rmv_btn`文件夹。
 
 - 插件在 DOM 发生变化时会立即注入思源的主界面。在这种情况下，如果添加的项目过多，性能将受到影响。  
-
-- 这个插件没有做额外的工作来防止JS注入，在这种情况下，当你在浏览器或公共网络中使用它时，你应该更加小心。  
-
-- 如果你试图隐藏的菜单项目与思源的商业部分有关，请考虑捐赠给@D和@V（而不是我），因为他们靠写开源代码生活。  
 
 - 只保证默认的两个主题正常使用  
 
