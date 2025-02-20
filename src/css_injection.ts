@@ -7,13 +7,13 @@ export function applyStyles(css) {
   style.appendChild(document.createTextNode(css));
 }
 
-export function build_css(setting_u, map){
+export function build_css(setting_u, map) {
   let css = ``;
   const config = setting_u.settings;
   for (let [key, item] of config) {
     console.log([item]);
     if (item.type === "checkbox" && item.value) {
-      if(key.includes("top_bottom_bar_")){
+      if (key.includes("top_bottom_bar_")) {
         css += `
 
 /* top bottom icon */
@@ -21,10 +21,9 @@ export function build_css(setting_u, map){
   display: none !important;
 }
 
-        `
-      } else if(key.includes("side_bar_")){
-
-        css+= `
+`;
+      } else if (key.includes("side_bar_")) {
+        css += `
 
 /* desktop side bar icon */
 .dock__item[data-type="${map.get(key)["html_css_or_field_hardcoded_name"]}"] {
@@ -32,32 +31,44 @@ export function build_css(setting_u, map){
 }        
 
 /* mobile side bar icon */
-.toolbar__icon[data-type="sidebar-${map.get(key)["html_css_or_field_hardcoded_name"]}-tab"] {
+.toolbar__icon[data-type="sidebar-${
+          map.get(key)["html_css_or_field_hardcoded_name"]
+        }-tab"] {
   display: none !important;
   }
 
 
-        `;
-        
-      } else if(key.includes("slash_menu_")){
-        
+`;
+      } else if (key.includes("slash_menu_")) {
         css += `
 
-.layout-tab-container .protyle .protyle-hint.b3-list.b3-list--background.hint--menu button[data-id="${map.get(key)["html_css_or_field_hardcoded_name"]}"]{
+/* slash menu */
+.layout-tab-container .protyle .protyle-hint.b3-list.b3-list--background.hint--menu button[data-id="${
+          map.get(key)["html_css_or_field_hardcoded_name"]
+        }"]{
   display: none !important;
 }
 
-        `;
+`;
+      } else if (key.includes("block_menu_") || key.includes("editor_menu_")) {
+        css += `
 
+/* block or editor menu */
+#commonMenu .b3-menu__items > button[data-id="${
+          map.get(key)["html_css_or_field_hardcoded_name"]
+        }"] {
+    display: none;
+}
+
+        
+`;
       }
-
     }
+
+    console.log(css);
+
+    applyStyles(css);
   }
-
-  console.log(css);
-
-  applyStyles(css);
-
 }
 
 export function rmvMenuItems(
@@ -146,7 +157,9 @@ export function rmvMenuItems(
     _target_node_.addEventListener(
       "DOMNodeInserted",
       function (e) {
-        const buttons = Array.from(_target_node_.getElementsByTagName("button"));
+        const buttons = Array.from(
+          _target_node_.getElementsByTagName("button")
+        );
         this.hideButtonsAndSeparators(buttons);
       },
       false
@@ -157,7 +170,9 @@ export function rmvMenuItems(
     var observer = new MutationObserver(function (mutationsList, observer) {
       for (let mutation of mutationsList) {
         if (mutation.type) {
-          const buttons = Array.from(_target_node_.getElementsByTagName("button"));
+          const buttons = Array.from(
+            _target_node_.getElementsByTagName("button")
+          );
           this.hideButtonsAndSeparators(buttons);
         }
       }
@@ -168,7 +183,9 @@ export function rmvMenuItems(
     var observer = new MutationObserver(function (mutationsList, observer) {
       for (let mutation of mutationsList) {
         if (mutation.type === "childList") {
-          const buttons = Array.from(_target_node_.getElementsByTagName("button"));
+          const buttons = Array.from(
+            _target_node_.getElementsByTagName("button")
+          );
           this.hideButtonsAndSeparators(buttons);
         }
       }
@@ -177,7 +194,6 @@ export function rmvMenuItems(
     observer.observe(_target_node_, { childList: true, subtree: true });
   }
 }
-
 
 export function reloadInterface() {
   // window.location.reload();
