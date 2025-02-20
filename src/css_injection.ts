@@ -83,23 +83,6 @@ export function rmvMenuItems(
   //                3: hide if two meet each other
 
   function hideButtonsAndSeparators(_items_, _target_node_) {
-    for (let i = 0; i < _items_.length; i++) {
-      //hide btns
-      let item = _items_[i];
-      if (item.classList.contains("b3-menu__item")) {
-        let labelElement = item.getElementsByClassName("b3-menu__label")[0];
-        if (labelElement) {
-          let span_text = labelElement.textContent.trim();
-          if (_toRemoveListArray_.includes(span_text)) {
-            if (_itemRemovePolicy_ == 1) {
-              item.remove();
-            } else if (_itemRemovePolicy_ == 2) {
-              item.style.display = "none";
-            }
-          }
-        }
-      }
-    }
 
     if (_seperateHidingPolicy_ == 3) {
       // test seperate and hide if two meet each other
@@ -150,48 +133,6 @@ export function rmvMenuItems(
       }
       hiddenList.forEach((x) => (x.style.display = "none"));
     }
-  }
-
-  if (_monitorImplementation_ == 1) {
-    //DOMNodeInserted
-    _target_node_.addEventListener(
-      "DOMNodeInserted",
-      function (e) {
-        const buttons = Array.from(
-          _target_node_.getElementsByTagName("button")
-        );
-        this.hideButtonsAndSeparators(buttons);
-      },
-      false
-    );
-    console.log(this.i18n.ignore_warning);
-  } else if (_monitorImplementation_ == 2) {
-    //MutationObserver
-    var observer = new MutationObserver(function (mutationsList, observer) {
-      for (let mutation of mutationsList) {
-        if (mutation.type) {
-          const buttons = Array.from(
-            _target_node_.getElementsByTagName("button")
-          );
-          this.hideButtonsAndSeparators(buttons);
-        }
-      }
-    });
-
-    observer.observe(_target_node_, { childList: true, subtree: true });
-  } else {
-    var observer = new MutationObserver(function (mutationsList, observer) {
-      for (let mutation of mutationsList) {
-        if (mutation.type === "childList") {
-          const buttons = Array.from(
-            _target_node_.getElementsByTagName("button")
-          );
-          this.hideButtonsAndSeparators(buttons);
-        }
-      }
-    });
-
-    observer.observe(_target_node_, { childList: true, subtree: true });
   }
 }
 

@@ -9,15 +9,9 @@ import { Plugin, showMessage, getFrontend } from "siyuan";
 import "@/index.scss";
 
 import { SettingUtils } from "./libs/setting-utils";
-import { convertStringToArray } from "./helper";
-import {
-  rmvMenuItems,
-  rmvTopButtonBarIcons,
-  rmvSideBarIcons,
-  build_css,
-} from "./css_injection";
+import { build_css } from "./css_injection";
 
-import {sy_hardcoded_name_map} from "./sy_hardcoded_name_map";
+import { sy_hardcoded_name_map } from "./sy_hardcoded_name_map";
 
 import { get_human_readable_name_by_identifier_from_map } from "./dynamic_i18n";
 const STORAGE_NAME = "menu-config";
@@ -61,47 +55,35 @@ export default class siyuan_rmv_btn extends Plugin {
       description: this.i18n.beggingDesc,
     });
     this.settingUtils.addItem({
-      key: "seperateHandlePolicy",
-      value: 1,
-      type: "select",
-      title: this.i18n.seperateHandlePolicy,
-      description: this.i18n.seperateHandlePolicydesc,
-      options: {
-        1: this.i18n.seperateHandlePolicyDontTouch,
-        2: this.i18n.seperateHandlePolicyHideAll,
-        3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
-        5: "@zxhd863943427",
-      },
+      key: "guide",
+      value: "",
+      type: "hint",
+      title: this.i18n.guideTitle,
+      description: this.i18n.guideDesc,
     });
     // this.settingUtils.addItem({
-    //   key: "unwantedMenuItem",
-    //   value: "",
-    //   type: "textarea",
-    //   title: this.i18n.rm_menu_title,
-    //   description: this.i18n.rm_menu_desc,
-    // });
-    // this.settingUtils.addItem({
-    //   key: "unwantedTopButtonBarIcon",
-    //   value: "",
-    //   type: "textarea",
-    //   title: this.i18n.rm_top_title,
-    //   description: this.i18n.rm_top_desc,
-    // });
-    // this.settingUtils.addItem({
-    //   key: "unwantedSideBarIcon",
-    //   value: "",
-    //   type: "textarea",
-    //   title: this.i18n.rm_side_title,
-    //   description: this.i18n.rm_side_desc,
+    //   key: "seperateHandlePolicy",
+    //   value: 1,
+    //   type: "select",
+    //   title: this.i18n.seperateHandlePolicy,
+    //   description: this.i18n.seperateHandlePolicydesc,
+    //   options: {
+    //     1: this.i18n.seperateHandlePolicyDontTouch,
+    //     2: this.i18n.seperateHandlePolicyHideAll,
+    //     3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
+    //     5: "@zxhd863943427",
+    //   },
     // });
 
-    /****top buttom bar */
-    for (const [key, value] of sy_hardcoded_name_map){
+    for (const [key, value] of sy_hardcoded_name_map) {
       this.settingUtils.addItem({
         key: key,
         value: false,
         type: "checkbox",
-        title: get_human_readable_name_by_identifier_from_map(key, sy_hardcoded_name_map),
+        title: get_human_readable_name_by_identifier_from_map(
+          key,
+          sy_hardcoded_name_map
+        ),
       });
     }
 
@@ -149,23 +131,6 @@ export default class siyuan_rmv_btn extends Plugin {
     this.settingUtils.load();
 
     build_css(this.settingUtils, sy_hardcoded_name_map);
-
-      // rmvTopButtonBarIcons(
-      //   convertStringToArray(this.settingUtils.get("unwantedTopButtonBarIcon"))
-      // );
-
-      // rmvSideBarIcons(
-      //   convertStringToArray(this.settingUtils.get("unwantedSideBarIcon")),
-      //   frontEnd
-      // );
-
-      // rmvMenuItems(
-      //   convertStringToArray(this.settingUtils.get("unwantedMenuItem")),
-      //   this.settingUtils.get("listenImplementation"),
-      //   this.settingUtils.get("seperateHandlePolicy"),
-      //   this.settingUtils.get("itemRemovePolicy"),
-      //   targetNode
-      // );
   }
 
   async onunload() {
