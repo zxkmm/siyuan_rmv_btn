@@ -14,10 +14,12 @@ import {
   rmvMenuItems,
   rmvTopButtonBarIcons,
   rmvSideBarIcons,
+  build_css,
 } from "./css_injection";
 
-import {slash_menu_hardcoded_name_map} from "./sy_hardcoded_name_map";
+import {sy_hardcoded_name_map} from "./sy_hardcoded_name_map";
 
+import { get_human_readable_name_by_identifier_from_map } from "./dynamic_i18n";
 const STORAGE_NAME = "menu-config";
 
 const frontEnd = getFrontend();
@@ -43,6 +45,7 @@ const targetNode = document.getElementById("commonMenu"); //it's the menu's id, 
 export default class siyuan_rmv_btn extends Plugin {
   private settingUtils: SettingUtils;
   private isMobile: boolean;
+  private final_css: string;
 
   async onload() {
     this.isMobile = frontEnd === "mobile" || frontEnd === "browser-mobile";
@@ -56,7 +59,6 @@ export default class siyuan_rmv_btn extends Plugin {
       type: "hint",
       title: this.i18n.beggingTitle,
       description: this.i18n.beggingDesc,
-      tab: "Window Buttons"
     });
     this.settingUtils.addItem({
       key: "seperateHandlePolicy",
@@ -70,49 +72,38 @@ export default class siyuan_rmv_btn extends Plugin {
         3: this.i18n.seperateHandlePolicyHideIfTwoMeetEachOther,
         5: "@zxhd863943427",
       },
-      tab: "Window Buttons"
     });
-    this.settingUtils.addItem({
-      key: "unwantedMenuItem",
-      value: "",
-      type: "textarea",
-      title: this.i18n.rm_menu_title,
-      description: this.i18n.rm_menu_desc,
-      tab: "Window Buttons1"
-    });
-    this.settingUtils.addItem({
-      key: "unwantedTopButtonBarIcon",
-      value: "",
-      type: "textarea",
-      title: this.i18n.rm_top_title,
-      description: this.i18n.rm_top_desc,
-    });
-    this.settingUtils.addItem({
-      key: "unwantedSideBarIcon",
-      value: "",
-      type: "textarea",
-      title: this.i18n.rm_side_title,
-      description: this.i18n.rm_side_desc,
-    });
+    // this.settingUtils.addItem({
+    //   key: "unwantedMenuItem",
+    //   value: "",
+    //   type: "textarea",
+    //   title: this.i18n.rm_menu_title,
+    //   description: this.i18n.rm_menu_desc,
+    // });
+    // this.settingUtils.addItem({
+    //   key: "unwantedTopButtonBarIcon",
+    //   value: "",
+    //   type: "textarea",
+    //   title: this.i18n.rm_top_title,
+    //   description: this.i18n.rm_top_desc,
+    // });
+    // this.settingUtils.addItem({
+    //   key: "unwantedSideBarIcon",
+    //   value: "",
+    //   type: "textarea",
+    //   title: this.i18n.rm_side_title,
+    //   description: this.i18n.rm_side_desc,
+    // });
 
-    /*****slash menu *******/
-    console.log(slash_menu_hardcoded_name_map);
-    for (const [key, value] of slash_menu_hardcoded_name_map) {
+    /****top buttom bar */
+    for (const [key, value] of sy_hardcoded_name_map){
       this.settingUtils.addItem({
         key: key,
         value: false,
         type: "checkbox",
-        title: value.english_human_read_name,
+        title: get_human_readable_name_by_identifier_from_map(key, sy_hardcoded_name_map),
       });
     }
-
-    this.settingUtils.addItem({
-      key: "hintForRemovedWindowsControlButtons",
-      value: "",
-      type: "hint",
-      title: this.i18n.hintForRemovedWindowsControlButtons,
-      description: this.i18n.hintForRemovedWindowsControlButtonsDesc,
-    });
 
     this.settingUtils.addItem({
       key: "hint",
@@ -157,24 +148,24 @@ export default class siyuan_rmv_btn extends Plugin {
     this.loadData(STORAGE_NAME);
     this.settingUtils.load();
 
-    if (true) {
-      rmvTopButtonBarIcons(
-        convertStringToArray(this.settingUtils.get("unwantedTopButtonBarIcon"))
-      );
+    build_css(this.settingUtils, sy_hardcoded_name_map);
 
-      rmvSideBarIcons(
-        convertStringToArray(this.settingUtils.get("unwantedSideBarIcon")),
-        frontEnd
-      );
+      // rmvTopButtonBarIcons(
+      //   convertStringToArray(this.settingUtils.get("unwantedTopButtonBarIcon"))
+      // );
 
-      rmvMenuItems(
-        convertStringToArray(this.settingUtils.get("unwantedMenuItem")),
-        this.settingUtils.get("listenImplementation"),
-        this.settingUtils.get("seperateHandlePolicy"),
-        this.settingUtils.get("itemRemovePolicy"),
-        targetNode
-      );
-    }
+      // rmvSideBarIcons(
+      //   convertStringToArray(this.settingUtils.get("unwantedSideBarIcon")),
+      //   frontEnd
+      // );
+
+      // rmvMenuItems(
+      //   convertStringToArray(this.settingUtils.get("unwantedMenuItem")),
+      //   this.settingUtils.get("listenImplementation"),
+      //   this.settingUtils.get("seperateHandlePolicy"),
+      //   this.settingUtils.get("itemRemovePolicy"),
+      //   targetNode
+      // );
   }
 
   async onunload() {

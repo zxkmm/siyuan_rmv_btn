@@ -7,6 +7,59 @@ export function applyStyles(css) {
   style.appendChild(document.createTextNode(css));
 }
 
+export function build_css(setting_u, map){
+  let css = ``;
+  const config = setting_u.settings;
+  for (let [key, item] of config) {
+    console.log([item]);
+    if (item.type === "checkbox" && item.value) {
+      if(key.includes("top_bottom_bar_")){
+        css += `
+
+/* top bottom icon */
+#${map.get(key)["html_css_or_field_hardcoded_name"]} {
+  display: none !important;
+}
+
+        `
+      } else if(key.includes("side_bar_")){
+
+        css+= `
+
+/* desktop side bar icon */
+.dock__item[data-type="${map.get(key)["html_css_or_field_hardcoded_name"]}"] {
+  display: none !important;
+}        
+
+/* mobile side bar icon */
+.toolbar__icon[data-type="sidebar-${map.get(key)["html_css_or_field_hardcoded_name"]}-tab"] {
+  display: none !important;
+  }
+
+
+        `;
+        
+      } else if(key.includes("slash_menu_")){
+        
+        css += `
+
+.layout-tab-container .protyle .protyle-hint.b3-list.b3-list--background.hint--menu button[data-id="${map.get(key)["html_css_or_field_hardcoded_name"]}"]{
+  display: none !important;
+}
+
+        `;
+
+      }
+
+    }
+  }
+
+  console.log(css);
+
+  applyStyles(css);
+
+}
+
 export function rmvMenuItems(
   _toRemoveListArray_,
   _monitorImplementation_,
@@ -125,47 +178,6 @@ export function rmvMenuItems(
   }
 }
 
-export function rmvTopButtonBarIcons(_toRemoveListArray_) {
-  _toRemoveListArray_.forEach((elementType) => {
-    const styleElement = document.createElement("style");
-    styleElement.textContent = `
-                  #${elementType} {
-                      display: none;
-                  }
-              `;
-
-    document.head.appendChild(styleElement);
-  });
-}
-
-export function rmvSideBarIcons(_toRemoveListArray_, _front_end_) {
-  if (_front_end_ == "desktop" || _front_end_ == "browser-desktop") {
-    //pc view
-    _toRemoveListArray_.forEach((elementType) => {
-      const styleElement = document.createElement("style");
-      styleElement.textContent = `
-              .dock__item[data-type="${elementType}"] {
-                  display: none;
-              }
-              `;
-      document.head.appendChild(styleElement);
-    });
-    //mobile view
-  }
-  if (_front_end_ == "mobile" || _front_end_ == "browser-mobile") {
-    //mobile
-    _toRemoveListArray_.forEach((elementType) => {
-      const styleElement = document.createElement("style");
-      styleElement.textContent = `
-              .toolbar__icon[data-type="sidebar-${elementType}-tab"] {
-                  display: none;
-                }
-              `;
-
-      document.head.appendChild(styleElement);
-    });
-  }
-}
 
 export function reloadInterface() {
   // window.location.reload();
