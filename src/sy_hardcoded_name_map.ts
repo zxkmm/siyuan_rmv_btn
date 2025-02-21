@@ -655,6 +655,14 @@ export const sy_hardcoded_name_map = new Map<string, DataEntry>([
     },
   ],
   [
+    "editor_menu_share_to_liandi",
+    {
+      html_css_or_field_hardcoded_name: "share2Liandi",
+      english_human_read_name: "Editor Menu: Share to Liandi",
+      chinese_human_read_name: "编辑器菜单：分享到社区",
+    },
+  ],
+  [
     "editor_menu_refresh",
     {
       html_css_or_field_hardcoded_name: "refresh",
