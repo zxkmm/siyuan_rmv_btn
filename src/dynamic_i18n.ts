@@ -8,7 +8,6 @@ export function get_human_readable_name_by_identifier_from_map(identifier: strin
     if (map.has(identifier)) {
       return map.get(identifier)[lang_key_name_in_map];
     } else {
-      console.error("identifier not found in map", identifier);
       return identifier;
     }
   }

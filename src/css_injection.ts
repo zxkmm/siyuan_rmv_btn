@@ -11,7 +11,6 @@ export function build_css(setting_u, map) {
   let css = ``;
   const config = setting_u.settings;
   for (let [key, item] of config) {
-    console.log([item]);
     if (item.type === "checkbox" && item.value) {
       if (key.includes("top_bottom_bar_")) {
         css += `
@@ -65,8 +64,6 @@ export function build_css(setting_u, map) {
       }
     }
 
-    console.log(css);
-
     applyStyles(css);
   }
 }
@@ -83,7 +80,6 @@ export function rmvMenuItems(
   //                3: hide if two meet each other
 
   function hideButtonsAndSeparators(_items_, _target_node_) {
-
     if (_seperateHidingPolicy_ == 3) {
       // test seperate and hide if two meet each other
       // TODO: didn't handle the situation that more than two seperators meet each other....
