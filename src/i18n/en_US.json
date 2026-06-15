@@ -42,5 +42,21 @@
   "beggingDesc": "This plugin is open source and free, so I need your encouragement.<br>If you like the features this plugin brings you, you can consider donating to help me with basic living expenses 🍚: <a href='https://afdian.com/p/501a9364e05811ef967752540025c377'>Donate</a>. (Donations won't unlock additional features)<br>If you're not financially comfortable, you can encourage me by giving a free ⭐ star to <a href='https://github.com/zxkmm/siyuan_rmv_btn'>my GitHub repository</a>.<br>If you or someone you know needs my skills, feel free to hire me anytime.",
 
   "guideTitle": "",
-  "guideDesc": "Enable the switch：hide <br> disable the switch：display"
+  "guideDesc": "Enable the switch：hide <br> disable the switch：display",
+
+  "settingSearchPlaceholder": "Search items to hide (zh / en / id)",
+  "catSlashMenu": "Slash Menu",
+  "catBlockMenu": "Block Menu",
+  "catEditorMenu": "Editor Menu",
+  "catTopBottomBar": "Top / Bottom Bar Buttons",
+  "catSideBar": "Sidebar Icons",
+  "catAbout": "About / Credits",
+  "noResults": "No matching items",
+  "saveAndReload": "Save & Reload",
+  "resetAll": "Reset All",
+  "resetAllConfirm": "Restore all hidden items to visible?",
+  "hiddenCount": "{n} hidden",
+  "selectAll": "Hide All",
+  "selectNone": "Show All",
+  "itemIdLabel": "Identifier"
 }

@@ -26,19 +26,42 @@ export class SettingUtils {
             width: width,
             height: height,
             confirmCallback: () => {
-                for (let key of this.settings.keys()) {
-                    this.updateValue(key);
-                }
-                let data = this.dump();
+                // The UI is now rendered by SettingDialog (Svelte), which calls
+                // applyValues() + save() directly. This native confirm path is
+                // only a fallback if openSetting() is not overridden.
                 if (callback !== undefined) {
-                    callback(data);
+                    callback(this.dump());
                 } else {
-                    this.plugin.data[this.name] = data;
                     this.save();
                 }
-                window.location.reload();
             }
         });
+    }
+
+    /**
+     * Snapshot of all current values as a plain object.
+     * Used by the Svelte settings dialog to seed its working copy.
+     */
+    getAll(): { [key: string]: any } {
+        const out: any = {};
+        for (const [key, item] of this.settings) {
+            if (item.type === 'button') continue;
+            out[key] = item.value;
+        }
+        return out;
+    }
+
+    /**
+     * Apply a values map back onto the settings items in memory.
+     * Does NOT persist; caller should call save() afterwards.
+     */
+    applyValues(values: { [key: string]: any }) {
+        for (const key of Object.keys(values)) {
+            const item = this.settings.get(key);
+            if (item) {
+                item.value = values[key];
+            }
+        }
     }
 
     async load() {
@@ -81,7 +104,7 @@ export class SettingUtils {
         return data;
     }
 
-    addItem(item: ISettingItem) {
+    addItem(item: ISettingItem, skipNative: boolean = false) {
         this.settings.set(item.key, item);
         let itemElement: HTMLElement;
         switch (item.type) {
@@ -153,6 +176,7 @@ export class SettingUtils {
                 break;
         }
         this.elements.set(item.key, itemElement);
+        if (skipNative) return;
         this.plugin.setting.addItem({
             title: item.title,
             description: item?.description,
