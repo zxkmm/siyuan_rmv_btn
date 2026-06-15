@@ -890,4 +890,12 @@ export const sy_hardcoded_name_map = new Map<string, DataEntry>([
       chinese_human_read_name: "侧边栏：单个笔记本图谱图标",
     },
   ],
+  [
+    "side_bar_agent_chat",
+    {
+      html_css_or_field_hardcoded_name: "agentChat",
+      english_human_read_name: "Sidebar: AI Agent Icon",
+      chinese_human_read_name: "侧边栏：AI Agent 图标",
+    },
+  ],
 ]);
