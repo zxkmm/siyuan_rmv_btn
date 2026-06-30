@@ -809,6 +809,14 @@ export const sy_hardcoded_name_map = new Map<string, DataEntry>([
     },
   ],
   [
+    "top_bottom_bar_zoom",
+    {
+      html_css_or_field_hardcoded_name: "barZoom",
+      english_human_read_name: "Top/Bottom Bar: Zoom Button",
+      chinese_human_read_name: "顶栏底栏：缩放按钮",
+    },
+  ],
+  [
     "top_bottom_bar_crown",
     {
       html_css_or_field_hardcoded_name: "toolbarVIP",
