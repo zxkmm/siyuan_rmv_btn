@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.2 2026.06.30
+- add zoom button hide support (#barZoom) for Windows
+
 ## 0.0.1 2023.12.04
 init
 
