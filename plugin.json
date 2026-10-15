@@ -2,7 +2,7 @@
   "name": "siyuan_rmv_btn",
   "author": "zxkmm",
   "url": "https://github.com/zxkmm/siyuan_rmv_btn",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "minAppVersion": "2.10.14",
   "backends": [
     "windows",
@@ -28,12 +28,13 @@
     "zh_CN": "一个移除你不想要的按钮/菜单项的插件，覆盖电脑和手机"
   },
   "readme": {
+    "default": "README.md",
     "en_US": "README.md",
     "zh_CN": "README_zh_CN.md"
   },
   "funding": {
     "custom": [
-      "https://github.com/zxkmm/zxkmm"
+      "https://pipe.b3log.org/blogs/zxkmm/articles/2025/02/08/1738993480704"
     ]
   },
   "keywords": [
